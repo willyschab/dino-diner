@@ -20,13 +20,15 @@ namespace DinoDiner.Menu.Entrees
         public DinoNuggets()
         {
             this.Price = 4.25;
-            this.Calories = 59;
             this.NuggetCount = 6;
+            this.Calories = 59 * 6;
         }
 
         public void AddNugget()
         {
             NuggetCount++;
+            this.Price += (NuggetCount - 6) * .25;
+            this.Calories += (NuggetCount - 6) * 59;
         }
     }
 }

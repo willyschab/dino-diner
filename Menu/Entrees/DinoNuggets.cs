@@ -28,7 +28,6 @@ namespace DinoDiner.Menu.Entrees
         {
             NuggetCount++;
             this.Price += (NuggetCount - 6) * .25;
-            this.Calories += (NuggetCount - 6) * 59;
         }
     }
 }

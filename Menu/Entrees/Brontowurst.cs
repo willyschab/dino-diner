@@ -17,7 +17,7 @@ namespace DinoDiner.Menu.Entrees
             {
                 List<string> ingredients = new List<string>() { "Brautwurst" };
                 if (peppers) ingredients.Add("Peppers");
-                if (onions) ingredients.Add("Onions");
+                if (onions) ingredients.Add("Onion");
                 if (wholeWheatBun) ingredients.Add("Whole Wheat Bun");
                 return ingredients;
             }
@@ -25,8 +25,8 @@ namespace DinoDiner.Menu.Entrees
 
         public Brontowurst()
         {
-            this.Price = 6.52;
-            this.Calories = 483;
+            this.Price = 5.36;
+            this.Calories = 498;
         }
 
         public void HoldPeppers()

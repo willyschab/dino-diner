@@ -4,9 +4,9 @@ namespace DinoDiner.Menu.Entrees
 {
     public class VelociWrap
     {
-        private bool peppers = true;
-        private bool onions = true;
-        private bool wholeWheatBun = true;
+        bool cheese = true;
+        bool dressing = true;
+        bool lettuce = true;
         public double Price { get; set; }
         public uint Calories { get; set; }
 
@@ -14,33 +14,33 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Brautwurst" };
-                if (peppers) ingredients.Add("Peppers");
-                if (onions) ingredients.Add("Onions");
-                if (wholeWheatBun) ingredients.Add("Whole Wheat Bun");
+                List<string> ingredients = new List<string>() { "Flour Tortilla", "Chicken Breast"};
+                if (lettuce) ingredients.Add("Romaine Lettuce");
+                if (dressing) ingredients.Add("Ceasar Dressing");
+                if (cheese) ingredients.Add("Parmesan Cheese");
                 return ingredients;
             }
         }
 
         public VelociWrap()
         {
-            this.Price = 4.25;
-            this.Calories = 59;
+            this.Price = 6.86;
+            this.Calories = 356;
         }
 
-        public void HoldPeppers()
+        public void HoldLettuce()
         {
-            this.peppers = false;
+            this.lettuce = false;
         }
 
-        public void HoldOnion()
+        public void HoldDressing()
         {
-            this.onions = false;
+            this.dressing = false;
         }
 
-        public void HoldBun()
+        public void HoldCheese()
         {
-            this.wholeWheatBun = false;
+            this.cheese = false;
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-
 namespace DinoDiner.Menu.Entrees
 {
     public class DinoNuggets
@@ -12,7 +11,11 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Chicken Nugget" };
+                List<string> ingredients = new List<string>() { };
+                for (int i = 0; i < NuggetCount; i++)
+                {
+                    ingredients.Add("Chicken Nugget");
+                }
                 return ingredients;
             }
         }
@@ -26,8 +29,9 @@ namespace DinoDiner.Menu.Entrees
 
         public void AddNugget()
         {
-            NuggetCount++;
-            this.Price += (NuggetCount - 6) * .25;
+            this.NuggetCount++;
+            this.Price += .25;
+            this.Calories += 59;
         }
     }
 }

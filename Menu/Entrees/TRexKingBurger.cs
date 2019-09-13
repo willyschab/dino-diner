@@ -4,9 +4,14 @@ namespace DinoDiner.Menu.Entrees
 {
     public class TRexKingBurger
     {
-        private bool peppers = true;
-        private bool onions = true;
-        private bool wholeWheatBun = true;
+        bool tomato = true;
+        bool pickle = true;
+        bool onion = true;
+        bool mayo = true;
+        bool lettuce = true;
+        bool ketchup = true;
+        bool mustard = true;
+        bool bun = true;
         public double Price { get; set; }
         public uint Calories { get; set; }
 
@@ -14,33 +19,64 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Brautwurst" };
-                if (peppers) ingredients.Add("Peppers");
-                if (onions) ingredients.Add("Onions");
-                if (wholeWheatBun) ingredients.Add("Whole Wheat Bun");
+                List<string> ingredients = new List<string>() { "Steakburger Pattie", "Steakburger Pattie", "Steakburger Pattie" };
+                if (tomato) ingredients.Add("Tomato");
+                if (pickle) ingredients.Add("Pickle");
+                if (onion) ingredients.Add("Onion");
+                if (mayo) ingredients.Add("Mayo");
+                if (lettuce) ingredients.Add("Lettuce");
+                if (ketchup) ingredients.Add("Ketchup");
+                if (mustard) ingredients.Add("Mustard");
+                if (bun) ingredients.Add("Whole Wheat Bun");
                 return ingredients;
             }
         }
 
         public TRexKingBurger()
         {
-            this.Price = 4.25;
-            this.Calories = 59;
+            this.Price = 8.45;
+            this.Calories = 728;
         }
 
-        public void HoldPeppers()
+        public void HoldTomato()
         {
-            this.peppers = false;
+            this.tomato = false;
+        }
+
+        public void HoldPickle()
+        {
+            this.pickle = false;
         }
 
         public void HoldOnion()
         {
-            this.onions = false;
+            this.onion = false;
+        }
+
+        public void HoldMayo()
+        {
+            this.mayo = false;
+        }
+
+        public void HoldLettuce()
+        {
+            this.lettuce = false;
+        }
+
+        public void HoldKetchup()
+        {
+            this.ketchup = false;
+        }
+
+        public void HoldMustard()
+        {
+            this.mustard = false;
         }
 
         public void HoldBun()
         {
-            this.wholeWheatBun = false;
+            this.bun = false;
         }
+
     }
 }

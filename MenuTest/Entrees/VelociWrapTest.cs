@@ -10,6 +10,7 @@ namespace MenuTest.Entrees
         public void ShouldHaveCorrectDefaultPrice()
         {
             VelociWrap vw = new VelociWrap();
+
             Assert.Equal(6.86, vw.Price, 2);
         }
 

@@ -9,8 +9,29 @@ namespace DinoDiner.Menu.Sides
         public MezzorellaSticks()
         {
             this.Price = 0.99;
-            this.Calories = 222;
-            this.Ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil" };
+            this.Calories = 540;
+            this.Ingredients = new List<string>() { "Vegetable Oil", "Cheese Product", "Breading" };
+        }
+        public override Size Size
+        {
+            set
+            {
+                switch (value)
+                {
+                    case Size.Medium:
+                        this.Price = 1.45;
+                        this.Calories = 610;
+                        break;
+                    case Size.Large:
+                        this.Price = 1.95;
+                        this.Calories = 720;
+                        break;
+                    case Size.Small:
+                        this.Price = 0.99;
+                        this.Calories = 540;
+                        break;
+                }
+            }
         }
     }
 }

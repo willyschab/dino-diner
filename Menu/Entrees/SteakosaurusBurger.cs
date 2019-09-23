@@ -8,7 +8,9 @@ namespace DinoDiner.Menu.Entrees
         bool mustard = true;
         bool ketchup = true;
         bool bun = true;
-
+        /// <summary>
+        /// Sets up the ingredients.
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -21,28 +23,38 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// Sets the price and calories.
+        /// </summary>
         public SteakosaurusBurger()
         {
             this.Price = 5.15;
             this.Calories = 621;
         }
-
+        /// <summary>
+        /// Allows the removal of pickles
+        /// </summary>
         public void HoldPickle()
         {
             this.pickle = false;
         }
-
+        /// <summary>
+        /// Allows the removal of mustard
+        /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;
         }
-
+        /// <summary>
+        /// Allows the removal of ketchup
+        /// </summary>
         public void HoldKetchup()
         {
             this.ketchup = false;
         }
-
+        /// <summary>
+        /// Allows the removal of the bun.
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;

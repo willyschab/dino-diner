@@ -6,7 +6,9 @@ namespace DinoDiner.Menu.Entrees
     {
         private bool peanutButter = true;
         private bool jelly = true;
-
+        /// <summary>
+        /// Sets up the ingredients.
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -17,18 +19,24 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// Sets the price and calories.
+        /// </summary>
         public PrehistoricPBJ()
         {
             this.Price = 6.52;
             this.Calories = 483;
         }
-
+        /// <summary>
+        /// Allows the removal of peanut butter.
+        /// </summary>
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
         }
-
+        /// <summary>
+        /// Allows the removal of jelly.
+        /// </summary>
         public void HoldJelly()
         {
             this.jelly = false;

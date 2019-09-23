@@ -6,13 +6,18 @@ namespace DinoDiner.Menu.Sides
 {
     public class Fryceritops : Side
     {
+        /// <summary>
+        /// Sets the initial ingredient, price, and calories.
+        /// </summary>
         public Fryceritops()
         {
             this.Ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil" };
             this.Price = 0.99;
             this.Calories = 222;
         }
-        
+        /// <summary>
+        /// Allows the changing of size.
+        /// </summary>
         public override Size Size
         {
             set

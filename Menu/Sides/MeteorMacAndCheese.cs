@@ -6,12 +6,18 @@ namespace DinoDiner.Menu.Sides
 {
     public class MeteorMacAndCheese : Side
     {
+        /// <summary>
+        /// Sets the initial ingredients, price, and calories
+        /// </summary>
         public MeteorMacAndCheese()
         {
             this.Ingredients = new List<string>() { "Macaroni Noodles", "Cheese Product", "Pork Sausage" };
             this.Price = 0.99;
             this.Calories = 420;
         }
+        /// <summary>
+        /// Allows the changing of size.
+        /// </summary>
         public override Size Size
         {
             set

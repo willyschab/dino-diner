@@ -4,7 +4,9 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-
+    /// <summary>
+    /// The enumerator of size.
+    /// </summary>
     public enum Size
     {
         Small,

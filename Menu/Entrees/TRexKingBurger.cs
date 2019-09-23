@@ -12,7 +12,9 @@ namespace DinoDiner.Menu.Entrees
         bool ketchup = true;
         bool mustard = true;
         bool bun = true;
-
+        /// <summary>
+        /// Sets up the ingredients.
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -29,48 +31,66 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// Sets the price and calories
+        /// </summary>
         public TRexKingBurger()
         {
             this.Price = 8.45;
             this.Calories = 728;
         }
-
+        /// <summary>
+        /// Allows the removal of a bun.
+        /// </summary>
         public void HoldTomato()
         {
             this.tomato = false;
         }
-
+        /// <summary>
+        /// Allows the removal of the pickle.
+        /// </summary>
         public void HoldPickle()
         {
             this.pickle = false;
         }
-
+        /// <summary>
+        /// Allows the removal of the onion.
+        /// </summary>
         public void HoldOnion()
         {
             this.onion = false;
         }
-
+        /// <summary>
+        /// Allows the removal of mayonnaise.
+        /// </summary>
         public void HoldMayo()
         {
             this.mayo = false;
         }
-
+        /// <summary>
+        /// Allows the removal of lettuce.
+        /// </summary>
         public void HoldLettuce()
         {
             this.lettuce = false;
         }
-
+        /// <summary>
+        /// Allows the removal of ketchup.
+        /// </summary>
         public void HoldKetchup()
         {
             this.ketchup = false;
         }
-
+        /// <summary>
+        /// Allows the removal of mustard
+        /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;
         }
-
+        /// <summary>
+        /// Allows the removal of the bun.
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;

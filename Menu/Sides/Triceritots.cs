@@ -6,12 +6,18 @@ namespace DinoDiner.Menu.Sides
 {
     public class Triceritots : Side
     {
+        /// <summary>
+        /// Sets the initial ingredients, price, and calories
+        /// </summary>
         public Triceritots()
         {
             this.Price = 0.99;
             this.Calories = 352;
             this.Ingredients = new List<string>() { "Potato", "Breading", "Vegetable Oil" };
         }
+        /// <summary>
+        /// Allows the changing of size.
+        /// </summary>
         public override Size Size
         {
             set

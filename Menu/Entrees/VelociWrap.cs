@@ -7,7 +7,9 @@ namespace DinoDiner.Menu.Entrees
         bool cheese = true;
         bool dressing = true;
         bool lettuce = true;
-
+        /// <summary>
+        /// Sets up the ingredients
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -19,23 +21,31 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// Sets the price and calories
+        /// </summary>
         public VelociWrap()
         {
             this.Price = 6.86;
             this.Calories = 356;
         }
-
+        /// <summary>
+        /// Allows the removal of lettuce.
+        /// </summary>
         public void HoldLettuce()
         {
             this.lettuce = false;
         }
-
+        /// <summary>
+        /// Allows the removal of dressing.
+        /// </summary>
         public void HoldDressing()
         {
             this.dressing = false;
         }
-
+        /// <summary>
+        /// Allows the removal of cheese.
+        /// </summary>
         public void HoldCheese()
         {
             this.cheese = false;

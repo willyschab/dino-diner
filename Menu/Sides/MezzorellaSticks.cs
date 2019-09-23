@@ -6,12 +6,18 @@ namespace DinoDiner.Menu.Sides
 {
     public class MezzorellaSticks : Side
     {
+        /// <summary>
+        /// Sets the initial ingredients, price, and calories
+        /// </summary>
         public MezzorellaSticks()
         {
             this.Price = 0.99;
             this.Calories = 540;
             this.Ingredients = new List<string>() { "Vegetable Oil", "Cheese Product", "Breading" };
         }
+        /// <summary>
+        /// Allows the changing of size.
+        /// </summary>
         public override Size Size
         {
             set

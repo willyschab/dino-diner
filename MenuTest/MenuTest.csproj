@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-HEAD
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="Microsoft.TestPlatform.ObjectModel" Version="16.2.0" />
     <PackageReference Include="Microsoft.TestPlatform.TestHost" Version="16.2.0" />
@@ -17,7 +16,6 @@ HEAD
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-=======
     <Compile Remove="Entrees\BrontowurstTest.cs" />
     <Compile Remove="Entrees\DinoNuggetsTest.cs" />
     <Compile Remove="Entrees\PrehistoricPBJTest.cs" />
@@ -31,7 +29,6 @@ HEAD
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
->>>>>>> 645c135b8b1e7c858f954968c5e7971e4e27a744
   </ItemGroup>
 
   <ItemGroup>

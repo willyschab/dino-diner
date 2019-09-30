@@ -41,10 +41,17 @@ namespace DinoDiner.Menu.Drinks
         /// Gets or sets the size
         /// </summary>
         public Size Size { get; set; }
+        /// <summary>
+        /// Get ands sets the flavor.
+        /// </summary>
         public SodasaurusFlavor SodasaurusFlavor { get; set; }
-
+        /// <summary>
+        /// Get's and set the ice bool.
+        /// </summary>
         public bool Ice { get; set; }
-
+        /// <summary>
+        /// Allows the removal of ice.
+        /// </summary>
         public void HoldIce()
         {
             Ice = false;

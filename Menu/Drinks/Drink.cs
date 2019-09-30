@@ -3,11 +3,25 @@ using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
 
-namespace DinoDiner.Menu.Sides
-{
 
-    public abstract class Side
+namespace DinoDiner.Menu.Drinks
+{
+    /// <summary>
+    /// The enumerator for our flavors.
+    /// </summary>
+    public enum SodasaurusFlavor
     {
+        Cola,
+        Cherry,
+        Chocolate,
+        RootBeer,
+        Vanilla,
+        Orange,
+        Lime
+    }
+    public abstract class Drink
+    {
+        
         /// <summary>
         /// Gets and sets the price
         /// </summary>
@@ -27,6 +41,13 @@ namespace DinoDiner.Menu.Sides
         /// Gets or sets the size
         /// </summary>
         public Size Size { get; set; }
+        public SodasaurusFlavor SodasaurusFlavor { get; set; }
 
+        public bool Ice { get; set; }
+
+        public void HoldIce()
+        {
+            Ice = false;
+        }
     }
 }

@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿/*Author: Will Schabel
+* Class: Velociwrap.cs
+*/
+using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class VelociWrap : Entree
     {
@@ -49,6 +52,14 @@ namespace DinoDiner.Menu.Entrees
         public void HoldCheese()
         {
             this.cheese = false;
+        }
+        /// <summary>
+        /// Prints out the correct name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Veloci-Wrap";
         }
     }
 }

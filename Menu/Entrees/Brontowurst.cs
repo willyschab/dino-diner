@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿/*Author: Will Schabel
+* Class: Brontowurst.cs
+*/
+using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Creates the class Brontowurst
@@ -54,6 +57,14 @@ namespace DinoDiner.Menu.Entrees
         public void HoldBun()
         {
             this.wholeWheatBun = false;
+        }
+        /// <summary>
+        /// Prints out the correct name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Brontowurst";
         }
     }
 }

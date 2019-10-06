@@ -1,15 +1,18 @@
-﻿using System;
+﻿/*Author: Will Schabel
+* Class: JurassicJava.cs
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     public class JurassicJava : Drink
     {
         private bool _roomForCream = false;
         private bool _decaf = false;
         private Size size;
+        private string sizeString;
         /// <summary>
         /// Sets our roomforcream property to it's default value, and allows it to be set.
         /// </summary>
@@ -33,8 +36,18 @@ namespace DinoDiner.Menu.Drinks
         {
             this.Price = .59;
             this.Calories = 2;
-            this.Ingredients = new List<string>() { "Water", "Coffee" };
             this.Ice = false;
+        }
+        /// <summary>
+        /// Builds the ingredients and makes them immutable.
+        /// </summary>
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>() { "Water", "Coffee" };
+                return ingredients;
+            }
         }
         /// <summary>
         /// Allows the RoomForCream variable to be switched to true.
@@ -63,20 +76,39 @@ namespace DinoDiner.Menu.Drinks
                     case Size.Medium:
                         this.Price = .99;
                         this.Calories = 4;
+                        this.sizeString = "Medium";
                         break;
                     case Size.Large:
                         this.Price = 1.49;
                         this.Calories = 8;
+                        this.sizeString = "Large";
                         break;
                     case Size.Small:
                         this.Price = .59;
                         this.Calories = 2;
+                        this.sizeString = "Small";
                         break;
                 }
             }
             get
             {
                 return size;
+            }
+        }
+        /// <summary>
+        /// Prints out the correct name for the drink.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            if (Decaf)
+            {
+                return  sizeString + " Decaf " + "Jurassic Java";
+            }
+            else
+            {
+                return sizeString + " Jurassic Java";
+
             }
         }
     }

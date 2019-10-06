@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
-namespace DinoDiner.Menu.Entrees
+﻿/*Author: Will Schabel
+* Class: DinoNuggets.cs
+*/
+using System.Collections.Generic;
+namespace DinoDiner.Menu
 {
     public class DinoNuggets : Entree
     {
@@ -36,6 +39,14 @@ namespace DinoDiner.Menu.Entrees
             this.NuggetCount++;
             this.Price += .25;
             this.Calories += 59;
+        }
+        /// <summary>
+        /// Prints out the correct name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
         }
     }
 }

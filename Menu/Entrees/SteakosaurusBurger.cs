@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿/*Author: Will Schabel
+* Class: SteakosaurusBurger.cs
+*/
+using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class SteakosaurusBurger : Entree
     {
@@ -58,6 +61,14 @@ namespace DinoDiner.Menu.Entrees
         public void HoldBun()
         {
             this.bun = false;
+        }
+        /// <summary>
+        /// Prints out the correct name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Steakosaurus Burger";
         }
     }
 }

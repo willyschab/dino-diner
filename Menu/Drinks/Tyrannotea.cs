@@ -1,11 +1,13 @@
-﻿using System;
+﻿/*Author: Will Schabel
+* Class: Tyrannotea.cs
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
-    public class Tyrannotea : Drink
+    public class Tyrannotea : Drink, IMenuItem
     {
         private bool _sweet = false;
         private bool _lemon = false;
@@ -33,10 +35,20 @@ namespace DinoDiner.Menu.Drinks
         {
             this.Price = 0.99;
             this.Calories = 8;
-            this.Ingredients = new List<string>() { "Water", "Tea" };
             if (Sweet) Ingredients.Add("Cane Sugar");
             if (Lemon) Ingredients.Add("Lemon");
             this.Ice = true;
+        }
+        /// <summary>
+        /// Builds the ingredients and makes them immutable.
+        /// </summary>
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>() { "Water", "Tea" };
+                return ingredients;
+            }
         }
         /// <summary>
         /// Allows the price and Calories to change when size changes.
@@ -90,6 +102,21 @@ namespace DinoDiner.Menu.Drinks
                 this.Calories *= 2;
             }
             
+        }
+        /// <summary>
+        /// Prints out the correct name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            if (Sweet)
+            {
+                return $"{size} Sweet Tyrannotea";
+            }
+            else
+            {
+                return $"{size} Tyrannotea";
+            }
         }
     }
 }

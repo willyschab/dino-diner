@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿/*Author: Will Schabel
+* Class: PrehistoricPBJ.cs
+*/
+using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class PrehistoricPBJ : Entree
     {
@@ -40,6 +43,14 @@ namespace DinoDiner.Menu.Entrees
         public void HoldJelly()
         {
             this.jelly = false;
+        }
+        /// <summary>
+        /// Prints out the correct name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Prehistoric PB&J";
         }
     }
 }

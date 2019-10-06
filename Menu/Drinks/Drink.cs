@@ -1,10 +1,12 @@
-﻿using System;
+﻿/*Author: Will Schabel
+* Class: Drink.cs
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu;
 
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu 
 {
     /// <summary>
     /// The enumerator for our flavors.
@@ -19,24 +21,17 @@ namespace DinoDiner.Menu.Drinks
         Orange,
         Lime
     }
-    public abstract class Drink
+    public abstract class Drink : IMenuItem
     {
-        
         /// <summary>
-        /// Gets and sets the price
+        /// Gets the price.
         /// </summary>
         public double Price { get; set; }
-
         /// <summary>
-        /// Gets and sets the calories
+        /// Gets the calories.
         /// </summary>
         public uint Calories { get; set; }
-
-        /// <summary>
-        /// Gets the ingredients list
-        /// </summary>
-        public List<string> Ingredients { get; set; }
-
+        public virtual List<string> Ingredients { get; set; }
         /// <summary>
         /// Gets or sets the size
         /// </summary>

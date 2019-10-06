@@ -74,7 +74,7 @@ namespace MenuTest
         {
             Fryceritops ft = new Fryceritops();
             ft.Size = size;
-            Assert.Equal($"{size} Friceritops", ft.ToString());
+            Assert.Equal($"{size} Fryceritops", ft.ToString());
         }
 
         [Theory]
@@ -157,7 +157,7 @@ namespace MenuTest
         {
             Sodasaurus soda = new Sodasaurus();
             soda.Size = size;
-            soda.Flavor = flavor;
+            soda.SodasaurusFlavor = flavor;
             Assert.Equal($"{size} {flavor} Sodasaurus", soda.ToString());
         }
 

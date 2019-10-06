@@ -1,19 +1,30 @@
-﻿using System;
+﻿/*Author: Will Schabel
+* Class: CretaceousCombo.cs
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Entrees;
-using DinoDiner.Menu.Drinks;
-using DinoDiner.Menu.Sides;
 
 namespace DinoDiner.Menu
 {
-    public class CretaciousCombo
+    public class CretaceousCombo : IMenuItem
     {
+        /// <summary>
+        /// Gets the entree.
+        /// </summary>
         public Entree Entree { get; set; }
+        /// <summary>
+        /// Gets the drink.
+        /// </summary>
         public Drink Drink { get; set; }
+        /// <summary>
+        /// Gets the side.
+        /// </summary>
         public Side Side { get; set; }
-
         private Size size = Size.Small;
+        /// <summary>
+        /// Sets the size.
+        /// </summary>
         public Size Size {
             get { return size; }
             set {
@@ -22,7 +33,9 @@ namespace DinoDiner.Menu
                 this.Side.Size = value;
             }
         }
-
+        /// <summary>
+        /// Gets and calculates the price.
+        /// </summary>
         public double Price
         {
             get
@@ -30,10 +43,9 @@ namespace DinoDiner.Menu
                 return Drink.Price + Side.Price + Entree.Price - 0.25;
             }
         }
-        public override string ToString()
-        {
-            return "";
-        }
+        /// <summary>
+        /// Gets and calculates the calories.
+        /// </summary>
         public uint Calories
         {
             get
@@ -41,6 +53,9 @@ namespace DinoDiner.Menu
                 return Drink.Calories + Side.Calories + Entree.Calories;
             }
         }
+        /// <summary>
+        /// Creates the ingredients list
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -52,13 +67,27 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
-
-        private CretaciousCombo() { }
-        public CretaciousCombo(Entree entree)
+        /// <summary>
+        /// Runs if combo is alled with no arguments.
+        /// </summary>
+        private CretaceousCombo() { }
+        /// <summary>
+        /// Constructor with one argument, entree.
+        /// </summary>
+        /// <param name="entree"></param>
+        public CretaceousCombo(Entree entree)
         {
             Entree = entree;
             Side = new Fryceritops();
             Drink = new Sodasaurus();
+        }
+        /// <summary>
+        /// Prints out the name of the entree plus combo.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"{Entree} Combo";
         }
 
     }

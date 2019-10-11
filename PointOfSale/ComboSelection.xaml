@@ -15,9 +15,30 @@
                 <Setter Property="Height" Value="200"/>
             </Style>
         </WrapPanel.Resources>
-        <Button>Brontowurst</Button>
-        <Button>Dino-Nuggets</Button>
-        <Button>Steakosaurus</Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Images/DinoDiner-01.png"/>
+            </Button.Background>
+            <DockPanel Height="180">
+                <TextBlock>Brontowurst Combo</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Images/DinoDiner-02.png"/>
+            </Button.Background>
+            <DockPanel Height="180">
+                <TextBlock>Dino-Nuggets Combo</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Images/DinoDiner-05.png"/>
+            </Button.Background>
+            <DockPanel Height="180">
+                <TextBlock>Steakosaurus Burger Combo</TextBlock>
+            </DockPanel>
+        </Button>
         <Button>T-Rex King Burger</Button>
         <Button>Pterodactyl Wings</Button>
         <Button>Prehistoric PB&amp;J</Button>

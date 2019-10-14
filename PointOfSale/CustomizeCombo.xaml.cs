@@ -18,15 +18,25 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for ComboSelection.xaml
     /// </summary>
-    public partial class ComboSelection : Page
+    public partial class CustomizeCombo : Page
     {
-        public ComboSelection()
+        public CustomizeCombo()
         {
             InitializeComponent();
         }
-        private void Customize(object sender, RoutedEventArgs e)
+        private void SelectEntree(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new EntreeSelection());
+        }
+
+        private void SelectDrink(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new DrinkSelection());
+        }
+
+        private void SelectSide(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SideSelection());
         }
     }
 }

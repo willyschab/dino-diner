@@ -17,9 +17,17 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Click="SelectCombo" Grid.Row="0" Grid.Column="0">Combo</Button>
-        <Button Grid.Row="0" Grid.Column="1">Entree</Button>
-        <Button Grid.Row="1" Grid.Column="0">Drinks</Button>
-        <Button Grid.Row="1" Grid.Column="1">Sides</Button>
+        <Button Click="SelectCombo" Grid.Row="0" Grid.Column="0">
+            <TextBlock FontSize="60">Combos</TextBlock>
+        </Button>
+        <Button Click="SelectEntree" Grid.Row="0" Grid.Column="1">
+            <TextBlock FontSize="60">Entree's</TextBlock>
+        </Button>
+        <Button Click="SelectDrink" Grid.Row="1" Grid.Column="0">
+            <TextBlock FontSize="60">Drinks</TextBlock>
+        </Button>
+        <Button Click="SelectSide" Grid.Row="1" Grid.Column="1">
+            <TextBlock FontSize="60">Sides</TextBlock>
+        </Button>
     </Grid>
 </Page>

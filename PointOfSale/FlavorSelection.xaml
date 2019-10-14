@@ -1,0 +1,75 @@
+﻿<Page x:Class="PointOfSale.FlavorSelection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="FlavorSelection">
+
+    <WrapPanel>
+        <WrapPanel.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Width" Value="195"/>
+                <Setter Property="Height" Value="195"/>
+            </Style>
+        </WrapPanel.Resources>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Blank.png"/>
+            </Button.Background>
+            <DockPanel Height="110">
+                <TextBlock FontSize="50">Cherry</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Blank.png"/>
+            </Button.Background>
+            <DockPanel Height="90">
+                <TextBlock FontSize="40">Chocolate</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Blank.png"/>
+            </Button.Background>
+            <DockPanel Height="110">
+                <TextBlock FontSize="50">Cola</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Blank.png"/>
+            </Button.Background>
+            <DockPanel Height="110">
+                <TextBlock FontSize="50">Lime</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Blank.png"/>
+            </Button.Background>
+            <DockPanel Height="110">
+                <TextBlock FontSize="50">Orange</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Blank.png"/>
+            </Button.Background>
+            <DockPanel Height="90">
+                <TextBlock FontSize="40">Root Beer</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Blank.png"/>
+            </Button.Background>
+            <DockPanel Height="110">
+                <TextBlock FontSize="50">Vanilla</TextBlock>
+            </DockPanel>
+        </Button>
+    </WrapPanel>
+</Page>

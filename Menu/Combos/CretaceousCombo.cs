@@ -87,8 +87,11 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{Entree} Combo";
+            return $"{Size} {Entree} Combo";
         }
-
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
     }
 }

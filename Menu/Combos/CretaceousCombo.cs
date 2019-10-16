@@ -91,7 +91,23 @@ namespace DinoDiner.Menu
         }
         public string Description
         {
-            get { return this.ToString(); }
+            get
+            {
+                List<string> ingredients = new List<string>();
+                return this.ToString();
+            }
+        }
+        public string[] Special
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.Add(Side.Description());
+                ingredients.AddRange(Side.Special);
+                ingredients.Add(Drink.Description());
+                ingredients.Add(Drink.Special);
+                return ingredients.ToArray();
+            }
         }
     }
 }

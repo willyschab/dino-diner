@@ -3,14 +3,24 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class Fryceritops : Side
+    public class Fryceritops : Side, INotifyPropertyChanged
     {
         private Size size;
         private string sizeString;
+        /// <summary>
+        /// The PorpertyChanged event handler; notifies of changes to the Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        // Helper function for notifying of property changes
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         /// <summary>
         /// Sets the initial ingredient, price, and calories.
         /// </summary>
@@ -44,16 +54,25 @@ namespace DinoDiner.Menu
                         this.Price = 1.45;
                         this.Calories = 365;
                         sizeString = "Medium";
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Calories");
                         break;
                     case Size.Large:
                         this.Price = 1.95;
                         this.Calories = 480;
                         sizeString = "Large";
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Calories");
                         break;
                     case Size.Small:
                         this.Price = 0.99;
                         this.Calories = 352;
                         sizeString = "Small";
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Calories");
                         break;
                 }
             }

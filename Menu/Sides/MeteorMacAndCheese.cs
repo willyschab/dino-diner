@@ -3,11 +3,12 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class MeteorMacAndCheese : Side
+    public class MeteorMacAndCheese : Side, INotifyPropertyChanged
     {
         private Size size;
         private string sizeString;
@@ -18,6 +19,15 @@ namespace DinoDiner.Menu
         {
             this.Price = 0.99;
             this.Calories = 420;
+        }
+        /// <summary>
+        /// The PorpertyChanged event handler; notifies of changes to the Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        // Helper function for notifying of property changes
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         /// <summary>
         /// Creates the list of ingredients
@@ -44,16 +54,25 @@ namespace DinoDiner.Menu
                         this.Price = 1.45;
                         this.Calories = 490;
                         sizeString = "Medium";
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Calories");
                         break;
                     case Size.Large:
                         this.Price = 1.95;
                         this.Calories = 520;
                         sizeString = "Large";
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Calories");
                         break;
                     case Size.Small:
                         this.Price = 0.99;
                         this.Calories = 352;
                         sizeString = "Small";
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Calories");
                         break;
                 }
             }

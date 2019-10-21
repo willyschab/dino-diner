@@ -60,12 +60,16 @@ namespace DinoDiner.Menu
                 {
                     case Size.Medium:
                         this.sizeString = "Medium";
+                        NotifyOfPropertyChange("Special");
                         break;
+
                     case Size.Large:
                         this.sizeString = "Large";
+                        NotifyOfPropertyChange("Special");
                         break;
                     case Size.Small:
                         this.sizeString = "Small";
+                        NotifyOfPropertyChange("Special");
                         break;
                 }
             }

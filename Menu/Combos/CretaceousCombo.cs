@@ -3,12 +3,26 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo : IOrderItem
+    public class CretaceousCombo : IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// The PorpertyChanged event handler; notifies of changes to the Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        // Helper function for notifying of property changes
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        /// <summary>
+        /// Sets the initial ingredients, price, and calories
+        /// </summary>
+
         /// <summary>
         /// Gets the entree.
         /// </summary>

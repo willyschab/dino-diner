@@ -19,7 +19,7 @@ namespace MenuTest
             check.Items = new ObservableCollection<IOrderItem>();
             check.Items.Add(test1);
             check.Items.Add(test2);
-            check.Items.Add(test3);;
+            check.Items.Add(test3);
             Assert.True(Math.Abs(7.34 - check.SubTotalCost) < .0000001);
         }
 

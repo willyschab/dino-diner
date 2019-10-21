@@ -21,7 +21,7 @@ namespace DinoDiner.Menu
         Orange,
         Lime
     }
-    public abstract class Drink : IMenuItem
+    public abstract class Drink : IOrderItem
     {
         /// <summary>
         /// Gets the price.
@@ -45,11 +45,12 @@ namespace DinoDiner.Menu
         /// </summary>
         public bool Ice { get; set; }
         /// <summary>
-        /// Allows the removal of ice.
+        /// Gets or sets Special orders of the item.
         /// </summary>
-        public void HoldIce()
-        {
-            Ice = false;
-        }
+        public string[] Special { get; set; }
+        /// <summary>
+        /// Gets or sets the description of the item.
+        /// </summary>
+        public string Description { get; }
     }
 }

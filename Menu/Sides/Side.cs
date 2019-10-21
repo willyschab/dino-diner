@@ -8,7 +8,7 @@ using System.Text;
 namespace DinoDiner.Menu
 {
 
-    public abstract class Side : IMenuItem
+    public abstract class Side : IOrderItem
     {
         /// <summary>
         /// Gets and sets the price
@@ -29,6 +29,14 @@ namespace DinoDiner.Menu
         /// Gets or sets the size
         /// </summary>
         public Size Size { get; set; }
+        /// <summary>
+        /// Gets or sets Special orders of the item.
+        /// </summary>
+        public string[] Special { get; set; }
+        /// <summary>
+        /// Gets or sets the description of the item.
+        /// </summary>
+        public string Description { get; set; }
 
     }
 }

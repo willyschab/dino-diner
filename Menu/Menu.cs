@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*Author: Will Schabel
+* Class: Menu.cs
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

@@ -70,5 +70,23 @@ namespace DinoDiner.Menu
         {
             return sizeString + " Meteor Mac and Cheese";
         }
+        /// <summary>
+        /// Returns the description of the item.
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// Gets any special preparation instructions
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
+        }
     }
 }

@@ -2,11 +2,23 @@
 * Class: DinoNuggets.cs
 */
 using System.Collections.Generic;
+using System.ComponentModel;
+
 namespace DinoDiner.Menu
 {
-    public class DinoNuggets : Entree
+    public class DinoNuggets : Entree, INotifyPropertyChanged
     {
         public int  NuggetCount { get; set; }
+
+        /// <summary>
+        /// The PorpertyChanged event handler; notifies of changes to the Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        // Helper function for notifying of property changes
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         /// <summary>
         /// sets up the ingredients.
         /// </summary>
@@ -39,6 +51,8 @@ namespace DinoDiner.Menu
             this.NuggetCount++;
             this.Price += .25;
             this.Calories += 59;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Prints out the correct name.
@@ -48,5 +62,25 @@ namespace DinoDiner.Menu
         {
             return "Dino-Nuggets";
         }
+        /// <summary>
+        /// Returns the description of the item.
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// Gets any special preparation instructions
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (NuggetCount > 6) special.Add($"{NuggetCount - 6} Extra Nugget(s)");
+                return special.ToArray();
+            }
+        }
+
     }
 }

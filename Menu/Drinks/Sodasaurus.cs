@@ -13,7 +13,15 @@ namespace DinoDiner.Menu
     {
         private Size size;
 
+        /// <summary>
+        /// The PorpertyChanged event handler; notifies of changes to the Price, Description, and Special properties.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+        // Helper function for notifying of property changes
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         public SodasaurusFlavor SodasaurusFlavor { get; set; }
         /// <summary>
@@ -43,6 +51,15 @@ namespace DinoDiner.Menu
         {
             get { return this.ToString();  }
 
+        }
+        /// <summary>
+        /// Allows the removal of ice.
+        /// </summary>
+        public void HoldIce()
+        {
+            Ice = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Gets the special instructions for this order item

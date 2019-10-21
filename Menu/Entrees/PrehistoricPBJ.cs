@@ -70,6 +70,9 @@ namespace DinoDiner.Menu
         {
             return "Prehistoric PB&J";
         }
+        /// <summary>
+        /// Returns the description of the item.
+        /// </summary>
         public string Description
         {
             get { return this.ToString(); }

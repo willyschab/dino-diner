@@ -3,12 +3,13 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
 
-    public abstract class Entree : IMenuItem
+    public abstract class Entree : IOrderItem
     {
         /// <summary>
         /// Gets and sets the price
@@ -24,6 +25,13 @@ namespace DinoDiner.Menu
         /// Gets the ingredients list
         /// </summary>
         public virtual List<string> Ingredients { get; set; }
-
+        /// <summary>
+        /// Gets or sets Special orders of the item.
+        /// </summary>
+        public string[] Special { get; set; }
+        /// <summary>
+        /// Gets or sets the description of the item.
+        /// </summary>
+        public string Description { get; set; }
     }
 }

@@ -120,5 +120,31 @@ namespace MenuTest.Drinks
             soda.SodasaurusFlavor = SodasaurusFlavor.Lime;
             Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Lime, soda.SodasaurusFlavor);
         }
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.Empty(soda.Special);
+        }
+        [Fact]
+        public void SpecialShouldAddIce()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.HoldIce();
+            Assert.Collection<string>(soda.Special, item =>
+            {
+                Assert.Equal("Hold Ice", item);
+            });
+        }
+        [Fact]
+        public void HoldIceShouldNotifyOfSpecialPropertyChange()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.PropertyChanged(soda, "Special", () =>
+            {
+
+                soda.HoldIce();
+            });
+        }
     }  
 }

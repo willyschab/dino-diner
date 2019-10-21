@@ -3,16 +3,26 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class JurassicJava : Drink
+    public class JurassicJava : Drink, INotifyPropertyChanged
     {
         private bool _roomForCream = false;
         private bool _decaf = false;
         private Size size;
         private string sizeString;
+        /// <summary>
+        /// The PorpertyChanged event handler; notifies of changes to the Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        // Helper function for notifying of property changes
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         /// <summary>
         /// Sets our roomforcream property to it's default value, and allows it to be set.
         /// </summary>
@@ -62,6 +72,8 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             this.Ice = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Changes the price and calories when size is changed.
@@ -109,6 +121,29 @@ namespace DinoDiner.Menu
             {
                 return sizeString + " Jurassic Java";
 
+            }
+        }
+        /// <summary>
+        /// Returns the descprition of the item.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                return this.ToString();
+            }
+        }
+        /// <summary>
+        /// Gets any special preperation instructions.
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (Ice) special.Add("Add Ice");
+                return special.ToArray();
             }
         }
     }

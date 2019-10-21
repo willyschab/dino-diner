@@ -68,5 +68,31 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Water", Ingredients);
             Assert.Contains<string>("Coffee", Ingredients);
         }
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+            JurassicJava coffee = new JurassicJava();
+            Assert.Empty(coffee.Special);
+        }
+        [Fact]
+        public void SpecialShouldAddIce()
+        {
+            JurassicJava coffee = new JurassicJava();
+            coffee.AddIce();
+            Assert.Collection<string>(coffee.Special, item =>
+            {
+                Assert.Equal("Add Ice", item);
+            });
+        }
+        [Fact]
+        public void AddIceShouldNotifyOfSpecialPropertyChange()
+        {
+            JurassicJava coffee = new JurassicJava();
+            Assert.PropertyChanged(coffee, "Special", () =>
+            {
+                coffee.AddIce();
+            });
+        }
     }
 }

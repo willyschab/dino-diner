@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo : IMenuItem
+    public class CretaceousCombo : IOrderItem
     {
         /// <summary>
         /// Gets the entree.
@@ -87,7 +87,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{Size} {Entree} Combo";
+            return $"{Entree} Combo";
         }
         public string Description
         {
@@ -102,10 +102,10 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> ingredients = new List<string>();
-                ingredients.Add(Side.Description());
+                ingredients.Add(Side.Description);
                 ingredients.AddRange(Side.Special);
-                ingredients.Add(Drink.Description());
-                ingredients.Add(Drink.Special);
+                ingredients.Add(Drink.Description);
+                ingredients.AddRange(Drink.Special);
                 return ingredients.ToArray();
             }
         }

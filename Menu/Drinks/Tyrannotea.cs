@@ -3,15 +3,25 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class Tyrannotea : Drink, IMenuItem
+    public class Tyrannotea : Drink, IOrderItem, INotifyPropertyChanged
     {
         private bool _sweet = false;
         private bool _lemon = false;
         private Size size;
+        /// <summary>
+        /// The PorpertyChanged event handler; notifies of changes to the Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        // Helper function for notifying of property changes
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         /// <summary>
         /// Property for adding sugar.
         /// </summary>
@@ -50,6 +60,12 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
+        public void HoldIce()
+        {
+            Ice = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+        }
         /// <summary>
         /// Allows the price and Calories to change when size changes.
         /// </summary>
@@ -85,6 +101,8 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             this.Lemon = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Switches sugar to false when true and vice versa.
@@ -116,6 +134,27 @@ namespace DinoDiner.Menu
             else
             {
                 return $"{size} Tyrannotea";
+            }
+        }
+        /// <summary>
+        /// Gets a description of this order tiem
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+
+        }
+        /// <summary>
+        /// Gets the special instructions for this order item
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                if (Lemon) special.Add("Add Lemon");
+                return special.ToArray();
             }
         }
     }

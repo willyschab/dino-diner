@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using DinoDiner.Menu;
 namespace PointOfSale
 {
     /// <summary>
@@ -23,6 +24,37 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+            OrderList.NavigationService = OrderInterface.NavigationService;
         }
+
+        private void BindDataContextToPage()
+        {
+            if(OrderInterface.Content is FrameworkElement element)
+            {
+                element.DataContext = OrderInterface.DataContext;
+            }
+        }
+
+        public void OnLoadComplete(object sender, RoutedEventArgs args)
+        {
+            SetFrameDataContext();
+        }
+        public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
+        {
+            SetFrameDataContext();
+        }
+
+        private void SetFrameDataContext()
+        {
+            FrameworkElement content = OrderInterface.Content as FrameworkElement;
+            if(content == null)
+            {
+                return;
+            }
+
+            content.DataContext = OrderInterface.DataContext;
+        }
+
+
     }
 }

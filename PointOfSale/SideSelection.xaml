@@ -15,7 +15,7 @@
                 <Setter Property="Height" Value="195"/>
             </Style>
         </WrapPanel.Resources>
-        <Button>
+        <Button Click="OnSelectFryceritops">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-08.png"/>
             </Button.Background>

@@ -17,9 +17,16 @@
         <ListBox Name ="OrderItem" Grid.Row="1" ItemsSource="{Binding Path=Items}" SelectionChanged="OnSelectionChange">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
+                    <StackPanel Width="190">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="15"/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
                         <TextBlock Text="{Binding Path=Description}"/>
-                        <ListBox ItemsSource="{Binding Path=Ingredients}"/>
+                        <ListBox ItemsSource="{Binding Path=Special}"/>
+                        <Button Click="OnRemoveItem" Background="Red" Foreground="White" Grid.Column="1">Remove</Button>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

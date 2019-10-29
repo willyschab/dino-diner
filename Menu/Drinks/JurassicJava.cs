@@ -13,7 +13,6 @@ namespace DinoDiner.Menu
         private bool _roomForCream = false;
         private bool _decaf = false;
         private Size size;
-        private string sizeString;
         /// <summary>
         /// The PorpertyChanged event handler; notifies of changes to the Price, Description, and Special properties.
         /// </summary>
@@ -37,7 +36,11 @@ namespace DinoDiner.Menu
         public bool Decaf
         {
             get { return _decaf;  }
-            set { _decaf = value; }
+            set
+            {
+                _decaf = value;
+                NotifyOfPropertyChange("Description");
+            }
         }
         /// <summary>
         /// Sets the default price, calories, ingredients, and ice.
@@ -78,7 +81,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Changes the price and calories when size is changed.
         /// </summary>
-        public Size Size
+        public override Size Size
         {
             set
             {
@@ -88,26 +91,26 @@ namespace DinoDiner.Menu
                     case Size.Medium:
                         this.Price = .99;
                         this.Calories = 4;
-                        this.sizeString = "Medium";
-                        NotifyOfPropertyChange("Special");
+                        size = Size.Medium;
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Large:
                         this.Price = 1.49;
                         this.Calories = 8;
-                        this.sizeString = "Large";
-                        NotifyOfPropertyChange("Special");
+                        size = Size.Large;
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Small:
                         this.Price = .59;
                         this.Calories = 2;
-                        this.sizeString = "Small";
-                        NotifyOfPropertyChange("Special");
+                        size = Size.Small;
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Description");
                         break;
                 }
             }
@@ -124,11 +127,11 @@ namespace DinoDiner.Menu
         {
             if (Decaf)
             {
-                return  sizeString + " Decaf " + "Jurassic Java";
+                return  $"{size} Decaf Jurassic Java";
             }
             else
             {
-                return sizeString + " Jurassic Java";
+                return $"{size} Jurassic Java";
 
             }
         }

@@ -47,8 +47,6 @@ namespace PointOfSale
         private void CancelExistingOrder(object sender, RoutedEventArgs args)
         {
             Order order = new Order();
-            
-            
         }
 
         private void SubmitExistingOrder(object sender, RoutedEventArgs args)
@@ -63,10 +61,8 @@ namespace PointOfSale
                 if(OrderItems.SelectedItem is IOrderItem item)
                 {
                     order.Remove(item);
-                }
-                
+                } 
             }
-            
         }
     }
 }

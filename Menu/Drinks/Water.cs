@@ -11,7 +11,6 @@ namespace DinoDiner.Menu
     public class Water : Drink, INotifyPropertyChanged
     {
         private Size size;
-        private string sizeString;
         private bool _lemon = false;
         /// <summary>
         /// The PorpertyChanged event handler; notifies of changes to the Price, Description, and Special properties.
@@ -51,7 +50,7 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
-        public Size Size
+        public override Size Size
         {
             set
             {
@@ -59,17 +58,17 @@ namespace DinoDiner.Menu
                 switch (size)
                 {
                     case Size.Medium:
-                        this.sizeString = "Medium";
-                        NotifyOfPropertyChange("Special");
+                        size = Size.Medium;
+                        NotifyOfPropertyChange("Description");
                         break;
 
                     case Size.Large:
-                        this.sizeString = "Large";
-                        NotifyOfPropertyChange("Special");
+                        size = Size.Large;
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Small:
-                        this.sizeString = "Small";
-                        NotifyOfPropertyChange("Special");
+                        size = Size.Small;
+                        NotifyOfPropertyChange("Description");
                         break;
                 }
             }
@@ -99,7 +98,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return sizeString + " Water";
+            return $"{size} Water";
         }
         /// <summary>
         /// Returns the description of the item.

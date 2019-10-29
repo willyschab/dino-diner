@@ -73,7 +73,7 @@
                 <TextBlock FontSize="15">Water</TextBlock>
             </DockPanel>
         </Button>
-        <Button Name="DecafButton" Grid.Row="1" Grid.Column="1" Opacity="0" IsEnabled="False">
+        <Button Click="OnDecaf" Name="DecafButton" Grid.Row="1" Grid.Column="1" Opacity="0" IsEnabled="False">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Blank.png"/>
             </Button.Background>
@@ -81,7 +81,7 @@
                 <TextBlock FontSize="40">Decaf</TextBlock>
             </DockPanel>
         </Button>
-        <Button Name="LemonButton" Grid.Row="1" Grid.Column="2" Opacity="0" IsEnabled="False">
+        <Button Click="OnLemon" Name="LemonButton" Grid.Row="1" Grid.Column="2" Opacity="0" IsEnabled="False">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Blank.png"/>
             </Button.Background>
@@ -89,7 +89,7 @@
                 <TextBlock FontSize="40">Lemon</TextBlock>
             </DockPanel>
         </Button>
-        <Button x:Name="SweetButton" Grid.Row="1" Grid.Column="3" Opacity="0" IsEnabled="False">
+        <Button Click="OnSweet" x:Name="SweetButton" Grid.Row="1" Grid.Column="3" Opacity="0" IsEnabled="False">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Blank.png"/>
             </Button.Background>
@@ -103,6 +103,14 @@
             </Button.Background>
             <DockPanel Height="50">
                 <TextBlock FontSize="40">Flavor</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button Click="OnDone" Grid.Row="1" Grid.Column="3">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Blank.png"/>
+            </Button.Background>
+            <DockPanel Height="50">
+                <TextBlock FontSize="40">Done</TextBlock>
             </DockPanel>
         </Button>
     </Grid>

@@ -29,7 +29,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets or sets the size
         /// </summary>
-        public Size Size { get; set; }
+        public virtual Size Size { get; set; }
         /// <summary>
         /// Gets or sets Special orders of the item.
         /// </summary>
@@ -37,7 +37,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets or sets the description of the item.
         /// </summary>
-        public virtual string Description { get; set; }
+        public string Description { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

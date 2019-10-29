@@ -28,7 +28,11 @@ namespace DinoDiner.Menu
         public bool Sweet
         {
             get { return _sweet; }
-            set { _sweet = value; }
+            set
+            {
+                _sweet = value;
+                NotifyOfPropertyChange("Description");
+            }
         }
         /// <summary>
         /// Property for adding Lemon.
@@ -36,7 +40,9 @@ namespace DinoDiner.Menu
         public bool Lemon
         {
             get { return _lemon; }
-            set { _lemon = value; }
+            set {
+                _lemon = value;;
+            }
         }
         /// <summary>
         /// Sets the default price, calories, ingredients, and Ice.
@@ -69,7 +75,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Allows the price and Calories to change when size changes.
         /// </summary>
-        public Size Size
+        public override Size Size
         {
             set
             {
@@ -79,23 +85,26 @@ namespace DinoDiner.Menu
                     case Size.Medium:
                         this.Price = 1.49;
                         this.Calories = 16;
-                        NotifyOfPropertyChange("Special");
+                        size = Size.Medium;
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Large:
                         this.Price = 1.99;
                         this.Calories = 32;
-                        NotifyOfPropertyChange("Special");
+                        size = Size.Large;
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Small:
                         this.Price = .99;
                         this.Calories = 8;
-                        NotifyOfPropertyChange("Special");
+                        size = Size.Small;
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Description");
                         break;
                 }
             }

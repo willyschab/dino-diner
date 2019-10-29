@@ -76,7 +76,6 @@ namespace DinoDiner.Menu
             items.Add(item);
             item.PropertyChanged += OnPropertyChanged;
             NotifyAllPropertyChanged();
-
         }
 
         public bool Remove(IOrderItem item)

@@ -45,7 +45,5 @@ namespace PointOfSale
 
             content.DataContext = OrderInterface.DataContext;
         }
-
-
     }
 }

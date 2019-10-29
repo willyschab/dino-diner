@@ -12,6 +12,7 @@ namespace DinoDiner.Menu
     public class Sodasaurus : Drink, INotifyPropertyChanged
     {
         private Size size;
+        private SodasaurusFlavor flavor;
 
         /// <summary>
         /// The PorpertyChanged event handler; notifies of changes to the Price, Description, and Special properties.
@@ -23,7 +24,18 @@ namespace DinoDiner.Menu
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public SodasaurusFlavor SodasaurusFlavor { get; set; }
+        public override SodasaurusFlavor SodasaurusFlavor
+        {
+            set
+            {
+                flavor = value;
+                NotifyOfPropertyChange("Description");
+            }
+            get
+            {
+                return flavor;
+            }
+        }
         /// <summary>
         /// Sets the default ingredients, price, calories, and ice.
         /// </summary>
@@ -76,7 +88,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Changes the calories and price when size is changed.
         /// </summary>
-        public Size Size
+        public override Size Size
         {
             set
             {
@@ -86,23 +98,26 @@ namespace DinoDiner.Menu
                     case Size.Medium:
                         this.Price = 2.00;
                         this.Calories = 156;
-                        NotifyOfPropertyChange("Special");
+                        size = Size.Medium;
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Large:
                         this.Price = 2.50;
                         this.Calories = 208;
-                        NotifyOfPropertyChange("Special");
+                        size = Size.Large;
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Small:
                         this.Price = 1.50;
                         this.Calories = 112;
-                        NotifyOfPropertyChange("Special");
+                        size = Size.Small;
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Description");
                         break;
                 }
             }

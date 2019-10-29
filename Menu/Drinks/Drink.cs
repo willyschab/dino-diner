@@ -36,11 +36,11 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets or sets the size
         /// </summary>
-        public Size Size { get; set; }
+        public virtual Size Size { get; set; }
         /// <summary>
         /// Get ands sets the flavor.
         /// </summary>
-        public SodasaurusFlavor SodasaurusFlavor { get; set; }
+        public virtual SodasaurusFlavor SodasaurusFlavor { get; set; }
         /// <summary>
         /// Get's and set the ice bool.
         /// </summary>

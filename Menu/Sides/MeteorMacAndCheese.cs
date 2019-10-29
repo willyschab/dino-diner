@@ -11,7 +11,6 @@ namespace DinoDiner.Menu
     public class MeteorMacAndCheese : Side, INotifyPropertyChanged
     {
         private Size size;
-        private string sizeString;
         /// <summary>
         /// Sets the initial ingredients, price, and calories
         /// </summary>
@@ -43,7 +42,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Allows the changing of size.
         /// </summary>
-        public Size Size
+        public override Size Size
         {
             set
             {
@@ -53,26 +52,26 @@ namespace DinoDiner.Menu
                     case Size.Medium:
                         this.Price = 1.45;
                         this.Calories = 490;
-                        sizeString = "Medium";
-                        NotifyOfPropertyChange("Special");
+                        size = Size.Medium;
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Large:
                         this.Price = 1.95;
                         this.Calories = 520;
-                        sizeString = "Large";
-                        NotifyOfPropertyChange("Special");
+                        size = Size.Large;
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Small:
                         this.Price = 0.99;
                         this.Calories = 352;
-                        sizeString = "Small";
-                        NotifyOfPropertyChange("Special");
+                        size = Size.Small;
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Description");
                         break;
                 }
             }
@@ -87,7 +86,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return sizeString + " Meteor Mac and Cheese";
+            return $"{size} Meteor Mac and Cheese";
         }
         /// <summary>
         /// Returns the description of the item.

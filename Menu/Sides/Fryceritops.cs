@@ -11,7 +11,6 @@ namespace DinoDiner.Menu
     public class Fryceritops : Side, INotifyPropertyChanged
     {
         private Size size;
-        private string sizeString;
         /// <summary>
         /// The PorpertyChanged event handler; notifies of changes to the Price, Description, and Special properties.
         /// </summary>
@@ -43,7 +42,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Allows the changing of size.
         /// </summary>
-        public Size Size
+        public override Size Size
         {
             set
             {
@@ -54,7 +53,6 @@ namespace DinoDiner.Menu
                         this.Price = 1.45;
                         this.Calories = 365;
                         size = Size.Medium;
-                        sizeString = "Medium";
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
                         NotifyOfPropertyChange("Description");
@@ -63,7 +61,6 @@ namespace DinoDiner.Menu
                         this.Price = 1.95;
                         this.Calories = 480;
                         size = Size.Large;
-                        sizeString = "Large";
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
                         NotifyOfPropertyChange("Description");
@@ -72,7 +69,6 @@ namespace DinoDiner.Menu
                         this.Price = 0.99;
                         this.Calories = 352;
                         size = Size.Small;
-                        sizeString = "Small";
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
                         NotifyOfPropertyChange("Description");
@@ -95,7 +91,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Returns the description of the item.
         /// </summary>
-        public override string Description
+        public string Description
         {
             get { return this.ToString(); }
         }

@@ -41,7 +41,7 @@ namespace PointOfSale
         }
         private void SodaFlavorsView(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new FlavorSelection());
+            NavigationService.Navigate(new FlavorSelection(Drink));
         }
 
         private void SodaSelect(object sender, RoutedEventArgs e)
@@ -82,8 +82,8 @@ namespace PointOfSale
             DecafButton.IsEnabled = true;
             LemonButton.Opacity = 0;
             LemonButton.IsEnabled = false;
-            SweetButton.Opacity = 100;
-            SweetButton.IsEnabled = true;
+            SweetButton.Opacity = 0;
+            SweetButton.IsEnabled = false;
             FlavorButton.Opacity = 0;
             FlavorButton.IsEnabled = false;
             if (DataContext is Order order)
@@ -114,10 +114,8 @@ namespace PointOfSale
                 if (Drink != null)
                 {
                     this.Drink.Size = size;
-                    this.Drink.Size = size;
                 }
             }
-            NavigationService.Navigate(new MenuCategorySelection());
         }
         protected void OnSelectLarge(object sender, RoutedEventArgs args)
         {
@@ -130,6 +128,29 @@ namespace PointOfSale
         protected void OnSelectSmall(object sender, RoutedEventArgs args)
         {
             SelectSize(DinoDiner.Menu.Size.Small);
+        }
+
+        private void OnDecaf(object sender, RoutedEventArgs e)
+        {
+            JurassicJava temp = new JurassicJava();
+            temp = (JurassicJava)Drink;
+            temp.Decaf = true;
+        }
+
+        private void OnSweet(object sender, RoutedEventArgs e)
+        {
+            Tyrannotea temp = new Tyrannotea();
+            temp = (Tyrannotea)Drink;
+            temp.Sweet = true;
+        }
+
+        private void OnLemon(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void OnDone(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

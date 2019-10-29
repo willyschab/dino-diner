@@ -8,68 +8,80 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="FlavorSelection">
 
-    <WrapPanel>
-        <WrapPanel.Resources>
-            <Style TargetType="Button">
-                <Setter Property="Width" Value="195"/>
-                <Setter Property="Height" Value="195"/>
-            </Style>
-        </WrapPanel.Resources>
-        <Button>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Click="OnCherry" Grid.Row="0" Grid.Column="0">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Blank.png"/>
             </Button.Background>
             <DockPanel Height="110">
-                <TextBlock FontSize="50">Cherry</TextBlock>
+                <TextBlock FontSize="40">Cherry</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="OnChocolate" Grid.Row="0" Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Blank.png"/>
             </Button.Background>
             <DockPanel Height="90">
-                <TextBlock FontSize="40">Chocolate</TextBlock>
+                <TextBlock FontSize="30">Chocolate</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="OnCola" Grid.Row="0" Grid.Column="2">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Blank.png"/>
             </Button.Background>
             <DockPanel Height="110">
-                <TextBlock FontSize="50">Cola</TextBlock>
+                <TextBlock FontSize="40">Cola</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="OnLime" Grid.Row="1" Grid.Column="2">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Blank.png"/>
             </Button.Background>
             <DockPanel Height="110">
-                <TextBlock FontSize="50">Lime</TextBlock>
+                <TextBlock FontSize="40">Lime</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="OnOrange" Grid.Row="0" Grid.Column="4">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Blank.png"/>
             </Button.Background>
             <DockPanel Height="110">
-                <TextBlock FontSize="50">Orange</TextBlock>
+                <TextBlock FontSize="40">Orange</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="OnRootBeer" Grid.Row="1" Grid.Column="0">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Blank.png"/>
             </Button.Background>
             <DockPanel Height="90">
-                <TextBlock FontSize="40">Root Beer</TextBlock>
+                <TextBlock FontSize="30">Root Beer</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="OnVanilla" Grid.Row="1" Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Blank.png"/>
             </Button.Background>
             <DockPanel Height="110">
-                <TextBlock FontSize="50">Vanilla</TextBlock>
+                <TextBlock FontSize="40">Vanilla</TextBlock>
             </DockPanel>
         </Button>
-    </WrapPanel>
+        <Button Grid.Row="1" Grid.Column="3" Click="OnDone">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Blank.png"/>
+            </Button.Background>
+            <DockPanel Height="110">
+                <TextBlock FontSize="40">Done</TextBlock>
+            </DockPanel>
+        </Button>
+    </Grid>
 </Page>

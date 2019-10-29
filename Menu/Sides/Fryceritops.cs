@@ -53,26 +53,29 @@ namespace DinoDiner.Menu
                     case Size.Medium:
                         this.Price = 1.45;
                         this.Calories = 365;
+                        size = Size.Medium;
                         sizeString = "Medium";
-                        NotifyOfPropertyChange("Special");
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Large:
                         this.Price = 1.95;
                         this.Calories = 480;
+                        size = Size.Large;
                         sizeString = "Large";
-                        NotifyOfPropertyChange("Special");
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Small:
                         this.Price = 0.99;
                         this.Calories = 352;
+                        size = Size.Small;
                         sizeString = "Small";
-                        NotifyOfPropertyChange("Special");
                         NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Calories");
+                        NotifyOfPropertyChange("Description");
                         break;
                 }
             }
@@ -87,12 +90,12 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return sizeString + " Fryceritops";
+            return $"{size} Fryceritops";
         }
         /// <summary>
         /// Returns the description of the item.
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }

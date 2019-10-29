@@ -26,16 +26,7 @@ namespace PointOfSale
             InitializeComponent();
             OrderList.NavigationService = OrderInterface.NavigationService;
         }
-
-        private void BindDataContextToPage()
-        {
-            if(OrderInterface.Content is FrameworkElement element)
-            {
-                element.DataContext = OrderInterface.DataContext;
-            }
-        }
-
-        public void OnLoadComplete(object sender, RoutedEventArgs args)
+        public void OnLoadComplete(object sender, NavigationEventArgs args)
         {
             SetFrameDataContext();
         }

@@ -13,38 +13,43 @@ namespace DinoDiner.Menu
     public class Order : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private double temp;
+        List<IOrderItem> items = new List<IOrderItem>();
+        double salesTaxRate = 0;
         /// <summary>
         /// Holds a collection of order items.
         /// </summary>
-
-        public ObservableCollection<IOrderItem> Items {get; protected set;}
+        public IOrderItem[] Items
+        {
+            get
+            {
+                return items.ToArray();
+            }
+        }
         public double SubTotalCost
         {
             get
             {
-                foreach(var data in Items)
+                double total = 0;
+                foreach (var data in Items)
                 {
-                    temp += data.Price;
+                    total += data.Price;
                 }
-                if(temp < 0)
+                if (total < 0)
                 {
-                    temp *= -1;
+                    total *= -1;
                 }
-                return temp;
+                return total;
             }
         }
         /// <summary>
         /// Gets and set sthe sales tax rate.
         /// </summary>
-        public double SalesTaxRate {
+        public double SalesTaxRate
+        {
             get { return SalesTaxRate; }
             protected set
             {
                 if (value < 0) return;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
 
             }
         }
@@ -64,16 +69,42 @@ namespace DinoDiner.Menu
         }
         public Order()
         {
-            Items = new ObservableCollection<IOrderItem>();
-            Items.CollectionChanged += OnCollectionChanged;
         }
 
-        private void OnCollectionChanged(object sender, EventArgs args)
+        public void Add(IOrderItem item)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
+            items.Add(item);
+            item.PropertyChanged += OnPropertyChanged;
+            NotifyAllPropertyChanged();
+
         }
 
+        public bool Remove(IOrderItem item)
+        {
+            bool removed = items.Remove(item);
+            if (removed)
+            {
+                NotifyAllPropertyChanged();
+            }
+            return removed;
+        }
+
+        void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs args)
+        {
+            NotifyAllPropertyChanged();
+        }
+
+        void NotifyAllPropertyChanged()
+        {
+            NotifyPropertyChanged("Items");
+            NotifyPropertyChanged("SubtotalCost");
+            NotifyPropertyChanged("SalesTaxCost");
+            NotifyPropertyChanged("TotalCost");
+        }
     }
 }

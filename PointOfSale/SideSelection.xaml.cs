@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +38,7 @@ namespace PointOfSale
         {
             if(DataContext is Order order)
             {
-                order.Items.Add(side);
+                order.Add(side);
                 this.Side = side;
             }
         }
@@ -48,30 +49,56 @@ namespace PointOfSale
             {
                 if(Side != null)
                 {
-                this.Side.Size = size;
+                    this.Side.Size = size;
+
                 }
             }
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        protected void OnSelectLarge(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Large);
+        }
+        protected void OnSelectMedium(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Medium);
+        }
+        protected void OnSelectSmall(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Small);
         }
 
         protected void OnSelectFryceritops(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order order)
+            if (DataContext is Order order)
             {
                 SelectSide(new Fryceritops());
             }
         }
 
-        protected void OnSelectLarge(object sender, ExecutedRoutedEventArgs args)
+        private void OnSelecttriceritops(object sender, RoutedEventArgs e)
         {
-            SelectSize(DinoDiner.Menu.Size.Large);
+            if (DataContext is Order order)
+            {
+                SelectSide(new Triceritots());
+            }
         }
-        protected void OnSelectMediume(object sender, ExecutedRoutedEventArgs args)
+
+        private void OnSelectMacCheese(object sender, RoutedEventArgs e)
         {
-            SelectSize(DinoDiner.Menu.Size.Medium);
+            if (DataContext is Order order)
+            {
+                SelectSide(new MeteorMacAndCheese());
+            }
         }
-        protected void OnSelectSmall(object sender, ExecutedRoutedEventArgs args)
+
+        private void OnSelectMezzorellaSticks(object sender, RoutedEventArgs e)
         {
-            SelectSize(DinoDiner.Menu.Size.Small);
+            if (DataContext is Order order)
+            {
+                SelectSide(new MezzorellaSticks());
+            }
         }
     }
 }

@@ -10,11 +10,14 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="70"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <TextBox Text="Order" Grid.Row="0"/>
-        <ListBox Name ="OrderItem" Grid.Row="1" ItemsSource="{Binding Path=Items}" SelectionChanged="OnSelectionChange">
+        <ListBox Name="OrderItems"
+            Grid.Row="1"
+                 ItemsSource="{Binding Path=Items}"
+                 SelectionChanged="OnSelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Width="190">
@@ -23,20 +26,28 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="15"/>
                             </Grid.ColumnDefinitions>
+                            <TextBlock  Name="Cost" Text="{Binding Path=Description}"/>
+                            <Button Click="OnRemoveItem"  Background="Red" Foreground="White" Grid.Column="1">x</Button>
                         </Grid>
-                        <TextBlock Text="{Binding Path=Description}"/>
-                        <ListBox ItemsSource="{Binding Path=Special}"/>
-                        <Button Click="OnRemoveItem" Background="Red" Foreground="White" Grid.Column="1">Remove</Button>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Border Grid.Row="2">
-            <StackPanel Orientation="Horizontal">
-                <TextBox Text="Price:"/>
-                <TextBox Text="$_____"/>
-            </StackPanel>
-        </Border>
-        <TextBox Text="Buttons Go Here" Grid.Row="3"/>
+        <StackPanel Grid.Row="2">
+            <TextBlock Height="35" Background="White" Grid.Row="2" Width="200" Text= "{Binding Path=SubtotalCost}"></TextBlock>
+            <TextBlock Height="35" Background="White" Grid.Row="2" Width="200" Text="{Binding Path=TotalCost}"></TextBlock>
+        </StackPanel>
+        <Button Name="Cancel" 
+                Content="Cancel" 
+                Grid.Row="3" 
+                Width="100" 
+                HorizontalAlignment="Left"
+                Click="CancelExistingOrder"/>
+        <Button Name="Submit" 
+                Content="Submit" 
+                Grid.Row="3" 
+                Width="100" 
+                HorizontalAlignment="Right"
+                Click="SubmitExistingOrder"/>
     </Grid>
 </UserControl>

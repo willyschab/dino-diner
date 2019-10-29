@@ -23,7 +23,7 @@
                 <TextBlock FontSize="15">Fryeritops</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="OnSelecttriceritops">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-11.png"/>
             </Button.Background>
@@ -31,7 +31,7 @@
                 <TextBlock FontSize="15">Triceritots</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="OnSelectMacCheese">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-09.png"/>
             </Button.Background>
@@ -39,7 +39,7 @@
                 <TextBlock FontSize="15">Meteor Mac &amp; Cheese</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Click="OnSelectMezzorellaSticks">
             <Button.Background>
                 <ImageBrush ImageSource="Images/DinoDiner-10.png"/>
             </Button.Background>
@@ -47,13 +47,26 @@
                 <TextBlock FontSize="15">Mezzorella Sticks</TextBlock>
             </DockPanel>
         </Button>
-        <Button Width="800">
+        <Button Grid.Row="0" Grid.Column="0">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Blank.png"/>
             </Button.Background>
-            <DockPanel Height="110" Width="200">
-                <TextBlock FontSize="80" Width="200"></TextBlock>
-            </DockPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <RadioButton Click="OnSelectSmall" Grid.Row="0" HorizontalAlignment="Right" Width="74">
+                    <TextBlock FontSize="15">Small</TextBlock>
+                </RadioButton>
+                <RadioButton Click="OnSelectMedium" Grid.Row="1">
+                    <TextBlock FontSize="15">Medium</TextBlock>
+                </RadioButton>
+                <RadioButton Click="OnSelectLarge" Grid.Row="2">
+                    <TextBlock FontSize="15">Large</TextBlock>
+                </RadioButton>
+            </Grid>
         </Button>
     </WrapPanel>
 </Page>

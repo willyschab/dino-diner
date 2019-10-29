@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DinoDiner.Menu;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DinoDiner.Menu;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for OrderControl.xaml
+    /// Interaction logic for UserControl.xaml
     /// </summary>
     public partial class OrderControl : UserControl
     {
@@ -27,23 +27,46 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        private void OnSelectionChange(object sender, SelectionChangedEventArgs e)
+        private void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
-            if (OrderItem.SelectedItem is Side side)
+            if(OrderItems.SelectedItem is Side side)
             {
                 NavigationService?.Navigate(new SideSelection(side));
             }
+            if(OrderItems.SelectedItem is Entree entree)
+            {
+                NavigationService?.Navigate(new EntreeSelection(entree));
+            }
+            if(OrderItems.SelectedItem is Drink drink)
+            {
+                NavigationService?.Navigate(new DrinkSelection(drink));
+
+            }
+        }
+
+        private void CancelExistingOrder(object sender, RoutedEventArgs args)
+        {
+            Order order = new Order();
+            
+            
+        }
+
+        private void SubmitExistingOrder(object sender, RoutedEventArgs args)
+        {
+
         }
 
         private void OnRemoveItem(object sender, RoutedEventArgs args)
         {
             if(DataContext is Order order)
             {
-                if(OrderItem.SelectedItem is IOrderItem item)
+                if(OrderItems.SelectedItem is IOrderItem item)
                 {
-                    order.Items.Remove(item);
+                    order.Remove(item);
                 }
+                
             }
+            
         }
     }
 }

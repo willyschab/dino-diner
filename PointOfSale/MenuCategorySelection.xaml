@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MenuCategorySelection">
+      Title="Menu Category Selection">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -17,17 +17,12 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Click="SelectCombo" Grid.Row="0" Grid.Column="0">
-            <TextBlock FontSize="60">Combos</TextBlock>
-        </Button>
-        <Button Click="SelectEntree" Grid.Row="0" Grid.Column="1">
-            <TextBlock FontSize="60">Entree's</TextBlock>
-        </Button>
-        <Button Click="SelectDrink" Grid.Row="1" Grid.Column="0">
-            <TextBlock FontSize="60">Drinks</TextBlock>
-        </Button>
-        <Button Click="SelectSide" Grid.Row="1" Grid.Column="1">
-            <TextBlock FontSize="60">Sides</TextBlock>
-        </Button>
+        <Button Click="SelectCombo" Grid.Row="0" Grid.Column="0" FontSize="48"  Content="Combos"/>
+        <Button Click="SelectEntree" Grid.Row="0" Grid.Column="1" FontSize="48"  Content="Entrees"/>
+        <Button Click="SelectDrink" Grid.Row="1" Grid.Column="0" FontSize="48"  Content="Drinks"/>
+        <Button Click="SelectSide" Grid.Row="1" Grid.Column="1" FontSize="48"   Content="Sides"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/DinoDiner-12.png"/>
+        </Grid.Background>
     </Grid>
 </Page>

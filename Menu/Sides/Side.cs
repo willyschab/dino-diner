@@ -3,12 +3,13 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
 
-    public abstract class Side : IOrderItem
+    public abstract class Side : IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Gets and sets the price
@@ -36,7 +37,8 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets or sets the description of the item.
         /// </summary>
-        public string Description { get; set; }
+        public virtual string Description { get; set; }
 
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

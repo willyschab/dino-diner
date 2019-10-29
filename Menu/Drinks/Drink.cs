@@ -3,6 +3,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 
@@ -21,7 +22,7 @@ namespace DinoDiner.Menu
         Orange,
         Lime
     }
-    public abstract class Drink : IOrderItem
+    public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Gets the price.
@@ -52,5 +53,7 @@ namespace DinoDiner.Menu
         /// Gets or sets the description of the item.
         /// </summary>
         public string Description { get; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

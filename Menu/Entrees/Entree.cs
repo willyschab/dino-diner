@@ -9,7 +9,7 @@ using System.Text;
 namespace DinoDiner.Menu
 {
 
-    public abstract class Entree : IOrderItem
+    public abstract class Entree : IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Gets and sets the price
@@ -33,5 +33,7 @@ namespace DinoDiner.Menu
         /// Gets or sets the description of the item.
         /// </summary>
         public string Description { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

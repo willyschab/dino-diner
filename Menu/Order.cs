@@ -30,7 +30,7 @@ namespace DinoDiner.Menu
             get
             {
                 double total = 0;
-                foreach (var data in Items)
+                foreach (IOrderItem data in Items)
                 {
                     total += data.Price;
                 }

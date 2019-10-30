@@ -26,15 +26,20 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="15"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock  Name="Cost" Text="{Binding Path=Description}"/>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock  Name="Description" Text="{Binding Path=Description}"/>
                             <Button Click="OnRemoveItem"  Background="Red" Foreground="White" Grid.Column="1">X</Button>
+                            <ListBox  Name="Special" ItemsSource="{Binding Path=Special}" Grid.Row="1"/>
                         </Grid>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <StackPanel Grid.Row="2">
-            <TextBlock Height="74" Background="White" Grid.Row="2" Text="{Binding Path=TotalCost}" Margin="40,0,0,0"></TextBlock>
+            <TextBlock Height="74" Background="White" Grid.Row="2" Text="{Binding Path=SubTotalCost}" Margin="40,0,0,0"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="2">
             <TextBlock Height="74" Background="White" Text="Price: $" Margin="0,0,160,0"/>

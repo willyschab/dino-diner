@@ -166,7 +166,6 @@
       <Name>Menu</Name>
     </ProjectReference>
   </ItemGroup>
-<<<<<<< HEAD
   <ItemGroup>
     <Resource Include="Images\DinoDiner-01.png" />
   </ItemGroup>
@@ -187,7 +186,5 @@
     <Resource Include="Images\DinoDiner-14.png" />
     <Resource Include="Images\DinoDiner-15.png" />
   </ItemGroup>
-=======
->>>>>>> f5ab4187b46413023088671f0c3df19701a1aace
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

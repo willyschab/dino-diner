@@ -4,8 +4,6 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>DinoDiner.Menu</RootNamespace>
   </PropertyGroup>
-
-<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="Milestones\" />
   </ItemGroup>
@@ -21,7 +19,4 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
-=======
->>>>>>> f5ab4187b46413023088671f0c3df19701a1aace
 </Project>

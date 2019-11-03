@@ -17,6 +17,10 @@ namespace MenuTest
 
         public string[] Special { get; } = new string[0];
 
+        public uint Calories { get; }
+
+        public List<string> Ingredients { get; }
+        
         public void Mutate()
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
@@ -439,7 +443,7 @@ namespace MenuTest
             Sodasaurus soda = new Sodasaurus();
             Assert.PropertyChanged(soda, "Description", () =>
             {
-                soda.Flavor = flavor;
+                soda.SodasaurusFlavor = flavor;
             });
         }
 

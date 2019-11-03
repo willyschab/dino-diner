@@ -60,14 +60,17 @@ namespace DinoDiner.Menu
                     case Size.Medium:
                         size = Size.Medium;
                         NotifyOfPropertyChange("Description");
+                        NotifyOfPropertyChange("Price");
                         break;
 
                     case Size.Large:
                         size = Size.Large;
+                        NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Description");
                         break;
                     case Size.Small:
                         size = Size.Small;
+                        NotifyOfPropertyChange("Price");
                         NotifyOfPropertyChange("Description");
                         break;
                 }

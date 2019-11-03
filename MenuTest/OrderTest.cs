@@ -16,10 +16,9 @@ namespace MenuTest
             Tyrannotea test1 = new Tyrannotea();
             Brontowurst test2 = new Brontowurst();
             Fryceritops test3 = new Fryceritops();
-            check.Items = new ObservableCollection<IOrderItem>();
-            check.Items.Add(test1);
-            check.Items.Add(test2);
-            check.Items.Add(test3);
+            check.Add(test1);
+            check.Add(test2);
+            check.Add(test3);
             Assert.True(Math.Abs(7.34 - check.SubTotalCost) < .0000001);
         }
 
@@ -33,10 +32,9 @@ namespace MenuTest
             test2.Price = -2;
             Fryceritops test3 = new Fryceritops();
             test3.Price = -2;
-            check.Items = new ObservableCollection<IOrderItem>();
-            check.Items.Add(test1);
-            check.Items.Add(test2);
-            check.Items.Add(test3);
+            check.Add(test1);
+            check.Add(test2);
+            check.Add(test3);
             Assert.True(Math.Abs(6 - check.SubTotalCost) < .00000001);
         }
     }

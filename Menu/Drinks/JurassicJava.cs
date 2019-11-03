@@ -68,6 +68,7 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             this.RoomForCream = true;
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Allows the addition of ice.

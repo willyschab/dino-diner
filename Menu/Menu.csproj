@@ -5,6 +5,7 @@
     <RootNamespace>DinoDiner.Menu</RootNamespace>
   </PropertyGroup>
 
+<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="Milestones\" />
   </ItemGroup>
@@ -21,4 +22,6 @@
     </PackageReference>
   </ItemGroup>
 
+=======
+>>>>>>> f5ab4187b46413023088671f0c3df19701a1aace
 </Project>

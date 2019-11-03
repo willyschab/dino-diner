@@ -53,6 +53,7 @@
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="CustomizeCombo.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -148,6 +149,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Milestones\1-create-order-pages.workbook" />
+    <None Include="Milestones\2-user-interaction-part-I.workbook" />
+    <None Include="Milestones\3-user-interaction-part-II.workbook" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -162,6 +166,7 @@
       <Name>Menu</Name>
     </ProjectReference>
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <Resource Include="Images\DinoDiner-01.png" />
   </ItemGroup>
@@ -182,5 +187,7 @@
     <Resource Include="Images\DinoDiner-14.png" />
     <Resource Include="Images\DinoDiner-15.png" />
   </ItemGroup>
+=======
+>>>>>>> f5ab4187b46413023088671f0c3df19701a1aace
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

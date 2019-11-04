@@ -19,37 +19,46 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for CustomizePrehistoricPBJ.xaml
     /// </summary>
-    public partial class CustomizePrehistoricPBJ : Page
+    public partial class CustomizeSteakosaurusBurger : Page
     {
-        private PrehistoricPBJ pbj;
+        private SteakosaurusBurger sb = new SteakosaurusBurger();
         private bool combo = false;
-        public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
+        public CustomizeSteakosaurusBurger(SteakosaurusBurger sb)
         {
             InitializeComponent();
-            this.pbj = pbj;
+            this.sb = sb;
         }
-        public CustomizePrehistoricPBJ(PrehistoricPBJ pbj, bool Combo)
+        public CustomizeSteakosaurusBurger(SteakosaurusBurger sb, bool Combo)
         {
             InitializeComponent();
             combo = Combo;
-            this.pbj = pbj;
+            this.sb = sb;
         }
 
-        private void OnHoldPeanutButter(object sender, RoutedEventArgs e)
+        private void OnHoldPickle(object sender, RoutedEventArgs e)
         {
-            pbj.HoldPeanutButter();
+            sb.HoldPickle();
         }
 
-        private void OnHoldJelly(object sender, RoutedEventArgs e)
+        private void OnHoldMustard(object sender, RoutedEventArgs e)
         {
-            pbj.HoldJelly();
+            sb.HoldMustard();
+        }
+
+        private void OnHoldKetchup(object sender, RoutedEventArgs e)
+        {
+            sb.HoldKetchup();
+        }
+        private void OnHoldbun(object sender, RoutedEventArgs e)
+        {
+            sb.HoldBun();
         }
 
         private void OnDone(object sender, RoutedEventArgs e)
         {
             if (combo)
             {
-                NavigationService.Navigate(new CustomizeCombo(pbj));
+                NavigationService.Navigate(new CustomizeCombo(sb));
             }
             else
             {

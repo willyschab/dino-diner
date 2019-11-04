@@ -38,7 +38,6 @@ namespace PointOfSale
             {
                 order.Add(entree);
                 this.Entree = entree;
-                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
 
@@ -47,7 +46,7 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 PrehistoricPBJ pbj = new PrehistoricPBJ();
-                order.Add(pbj);
+                SelectEntree(pbj);
                 NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
             }
         }
@@ -56,8 +55,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                SelectEntree(new Brontowurst());
-                
+                Brontowurst br = new Brontowurst();
+                SelectEntree(br);
+                NavigationService.Navigate(new CustomizeBrontowurst(br));
             }
         }
 
@@ -65,7 +65,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                SelectEntree(new DinoNuggets());
+                DinoNuggets dn = new DinoNuggets();
+                SelectEntree(dn);
+                NavigationService.Navigate(new CustomizeDinoNuggets(dn));
             }
         }
 
@@ -73,7 +75,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                SelectEntree(new SteakosaurusBurger());
+                SteakosaurusBurger sb = new SteakosaurusBurger();
+                SelectEntree(sb);
+                NavigationService.Navigate(new CustomizeSteakosaurusBurger(sb));
             }
         }
 
@@ -89,7 +93,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                SelectEntree(new VelociWrap());
+                VelociWrap vw = new VelociWrap();
+                SelectEntree(vw);
+                NavigationService.Navigate(new CustomizeVelociWrap(vw));
             }
         }
 
@@ -97,7 +103,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                SelectEntree(new TRexKingBurger());
+                TRexKingBurger kb = new TRexKingBurger();
+                SelectEntree(kb);
+                NavigationService.Navigate(new CustomizeTRexKingBurger(kb));
             }
         }
     }

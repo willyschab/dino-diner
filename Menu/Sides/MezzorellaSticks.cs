@@ -98,7 +98,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets any special preparation instructions
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {

@@ -19,37 +19,42 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for CustomizePrehistoricPBJ.xaml
     /// </summary>
-    public partial class CustomizePrehistoricPBJ : Page
+    public partial class CustomizeVelociWrap : Page
     {
-        private PrehistoricPBJ pbj;
+        private VelociWrap vw;
         private bool combo = false;
-        public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
+        public CustomizeVelociWrap(VelociWrap vw)
         {
             InitializeComponent();
-            this.pbj = pbj;
+            this.vw = vw;
         }
-        public CustomizePrehistoricPBJ(PrehistoricPBJ pbj, bool Combo)
+        public CustomizeVelociWrap(VelociWrap vw, bool Combo)
         {
             InitializeComponent();
             combo = Combo;
-            this.pbj = pbj;
+            this.vw = vw;
         }
 
-        private void OnHoldPeanutButter(object sender, RoutedEventArgs e)
+        private void OnHoldDressing(object sender, RoutedEventArgs e)
         {
-            pbj.HoldPeanutButter();
+            vw.HoldDressing();
         }
 
-        private void OnHoldJelly(object sender, RoutedEventArgs e)
+        private void OnHoldCheese(object sender, RoutedEventArgs e)
         {
-            pbj.HoldJelly();
+            vw.HoldCheese();
+        }
+
+        private void OnHoldLettuce(object sender, RoutedEventArgs e)
+        {
+            vw.HoldLettuce();
         }
 
         private void OnDone(object sender, RoutedEventArgs e)
         {
             if (combo)
             {
-                NavigationService.Navigate(new CustomizeCombo(pbj));
+                NavigationService.Navigate(new CustomizeCombo(vw));
             }
             else
             {

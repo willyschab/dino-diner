@@ -119,12 +119,13 @@ namespace DinoDiner.Menu
         {
             get
             {
-                List<string> ingredients = new List<string>();
-                ingredients.Add(Side.Description);
-                ingredients.AddRange(Side.Special);
-                ingredients.Add(Drink.Description);
-                ingredients.AddRange(Drink.Special);
-                return ingredients.ToArray();
+                List<string> special = new List<string>();
+                special.Add(Entree.Description);
+                special.Add(Side.Description);
+                special.AddRange(Side.Special);
+                special.Add(Drink.Description);
+                special.AddRange(Drink.Special);
+                return special.ToArray();
             }
         }
     }

@@ -150,7 +150,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets any special preperation instructions.
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {

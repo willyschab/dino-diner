@@ -48,7 +48,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets or sets Special orders of the item.
         /// </summary>
-        public string[] Special { get; set; }
+        public virtual string[] Special { get; set; }
         /// <summary>
         /// Gets or sets the description of the item.
         /// </summary>

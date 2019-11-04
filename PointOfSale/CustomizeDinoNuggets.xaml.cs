@@ -19,37 +19,32 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for CustomizePrehistoricPBJ.xaml
     /// </summary>
-    public partial class CustomizePrehistoricPBJ : Page
+    public partial class CustomizeDinoNuggets : Page
     {
-        private PrehistoricPBJ pbj;
+        private DinoNuggets dn;
         private bool combo = false;
-        public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
+        public CustomizeDinoNuggets(DinoNuggets dn)
         {
             InitializeComponent();
-            this.pbj = pbj;
+            this.dn = dn;
         }
-        public CustomizePrehistoricPBJ(PrehistoricPBJ pbj, bool Combo)
+        public CustomizeDinoNuggets(DinoNuggets dn, bool Combo)
         {
             InitializeComponent();
             combo = Combo;
-            this.pbj = pbj;
+            this.dn = dn;
         }
 
-        private void OnHoldPeanutButter(object sender, RoutedEventArgs e)
+        private void OnAddNugget(object sender, RoutedEventArgs e)
         {
-            pbj.HoldPeanutButter();
-        }
-
-        private void OnHoldJelly(object sender, RoutedEventArgs e)
-        {
-            pbj.HoldJelly();
+            dn.AddNugget();
         }
 
         private void OnDone(object sender, RoutedEventArgs e)
         {
             if (combo)
             {
-                NavigationService.Navigate(new CustomizeCombo(pbj));
+                NavigationService.Navigate(new CustomizeCombo(dn));
             }
             else
             {

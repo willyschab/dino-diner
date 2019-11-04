@@ -23,16 +23,18 @@ namespace PointOfSale
     {
         private Brontowurst br;
         private bool combo = false;
+        CretaceousCombo CretaceousCombo { get; set; }
         public CustomizeBrontowurst(Brontowurst br)
         {
             InitializeComponent();
             this.br = br;
         }
-        public CustomizeBrontowurst(Brontowurst br, bool Combo)
+        public CustomizeBrontowurst(Brontowurst br, CretaceousCombo cretaceousCombo)
         {
             InitializeComponent();
-            combo = Combo;
             this.br = br;
+            combo = true;
+            CretaceousCombo = cretaceousCombo;
         }
 
         private void OnHoldPeppers(object sender, RoutedEventArgs e)
@@ -54,7 +56,7 @@ namespace PointOfSale
         {
             if (combo)
             {
-                NavigationService.Navigate(new CustomizeCombo(br));
+                NavigationService.Navigate(new CustomizeCombo(CretaceousCombo));
             }
             else
             {

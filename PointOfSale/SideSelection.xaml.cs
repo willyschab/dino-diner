@@ -23,6 +23,7 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
+        private bool combo = false;
         public Side Side { get; set; }
         public SideSelection()
         {
@@ -32,6 +33,11 @@ namespace PointOfSale
         {
             InitializeComponent();
             Side = side;
+        }
+        public SideSelection(bool Combo)
+        {
+            InitializeComponent();
+            combo = Combo;
         }
 
         private void SelectSide(Side side)
@@ -52,7 +58,14 @@ namespace PointOfSale
                     Side.Size = size;                
                 }
             }
+            if (combo)
+            {
+                NavigationService.Navigate(new CustomizeCombo());
+            }
+            else
+            {
             NavigationService.Navigate(new MenuCategorySelection());
+            }
         }
 
         protected void OnSelectLarge(object sender, RoutedEventArgs args)

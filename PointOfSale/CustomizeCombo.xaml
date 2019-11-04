@@ -31,29 +31,26 @@
                 <TextBlock FontSize="14">Current Drink</TextBlock>
             </DockPanel>
         </Button>
-        <Button>
+        <Button Grid.Row="0" Grid.Column="0">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Blank.png"/>
             </Button.Background>
-            <RadioButton>
-                <TextBlock FontSize="15">Small</TextBlock>
-            </RadioButton>
-        </Button>
-        <Button>
-            <Button.Background>
-                <ImageBrush ImageSource="Images/Blank.png"/>
-            </Button.Background>
-            <RadioButton>
-                <TextBlock FontSize="15">Medium</TextBlock>
-            </RadioButton>
-        </Button>
-        <Button>
-            <Button.Background>
-                <ImageBrush ImageSource="Images/Blank.png"/>
-            </Button.Background>
-            <RadioButton>
-                <TextBlock FontSize="15">Large</TextBlock>
-            </RadioButton>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <RadioButton Click="OnSelectSmall" Grid.Row="0">
+                    <TextBlock FontSize="15">Small</TextBlock>
+                </RadioButton>
+                <RadioButton Click="OnSelectMedium" Grid.Row="1">
+                    <TextBlock FontSize="15">Medium</TextBlock>
+                </RadioButton>
+                <RadioButton Click="OnSelectLarge" Grid.Row="2">
+                    <TextBlock FontSize="15">Large</TextBlock>
+                </RadioButton>
+            </Grid>
         </Button>
     </WrapPanel>
 </Page>

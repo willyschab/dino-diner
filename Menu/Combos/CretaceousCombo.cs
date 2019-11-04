@@ -105,13 +105,12 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{Entree} Combo";
+            return $"{size} {Entree} Combo";
         }
         public string Description
         {
             get
             {
-                List<string> ingredients = new List<string>();
                 return this.ToString();
             }
         }

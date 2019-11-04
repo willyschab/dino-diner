@@ -23,16 +23,18 @@ namespace PointOfSale
     {
         private TRexKingBurger kb = new TRexKingBurger();
         private bool combo = false;
+        public CretaceousCombo CretaceousCombo { get; set; }
         public CustomizeTRexKingBurger(TRexKingBurger kb)
         {
             InitializeComponent();
             this.kb = kb;
         }
-        public CustomizeTRexKingBurger(TRexKingBurger kb, bool Combo)
+        public CustomizeTRexKingBurger(TRexKingBurger kb, CretaceousCombo cretaceousCombo)
         {
             InitializeComponent();
-            combo = Combo;
+            combo = true;
             this.kb = kb;
+            CretaceousCombo = cretaceousCombo;
         }
 
         private void OnHoldPickle(object sender, RoutedEventArgs e)
@@ -74,7 +76,7 @@ namespace PointOfSale
         {
             if (combo)
             {
-                NavigationService.Navigate(new CustomizeCombo(kb));
+                NavigationService.Navigate(new CustomizeCombo(CretaceousCombo));
             }
             else
             {

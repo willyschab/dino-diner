@@ -23,16 +23,18 @@ namespace PointOfSale
     {
         private PrehistoricPBJ pbj;
         private bool combo = false;
+        public CretaceousCombo CretaceousCombo { get; set; }
         public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
         {
             InitializeComponent();
             this.pbj = pbj;
         }
-        public CustomizePrehistoricPBJ(PrehistoricPBJ pbj, bool Combo)
+        public CustomizePrehistoricPBJ(PrehistoricPBJ pbj, CretaceousCombo cretaceousCombo)
         {
             InitializeComponent();
-            combo = Combo;
+            combo = true;
             this.pbj = pbj;
+            CretaceousCombo = cretaceousCombo;
         }
 
         private void OnHoldPeanutButter(object sender, RoutedEventArgs e)
@@ -49,7 +51,7 @@ namespace PointOfSale
         {
             if (combo)
             {
-                NavigationService.Navigate(new CustomizeCombo(pbj));
+                NavigationService.Navigate(new CustomizeCombo(CretaceousCombo));
             }
             else
             {

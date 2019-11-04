@@ -21,6 +21,7 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
+        private bool combo = false;
         public Drink Drink { get; set; }
         public DrinkSelection(Drink drink)
         {
@@ -30,6 +31,11 @@ namespace PointOfSale
         public DrinkSelection()
         {
             InitializeComponent();
+        }
+        public DrinkSelection(bool Combo)
+        {
+            InitializeComponent();
+            combo = Combo;
         }
         private void SelectDrink(Drink drink)
         {
@@ -150,7 +156,14 @@ namespace PointOfSale
 
         private void OnDone(object sender, RoutedEventArgs e)
         {
+            if (combo)
+            {
+                NavigationService.Navigate(new CustomizeCombo());
+            }
+            else
+            {
             NavigationService.Navigate(new MenuCategorySelection());
+            }
         }
     }
 }

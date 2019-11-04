@@ -21,27 +21,49 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeCombo : Page
     {
-        public Entree Entree { get; set; }
+        private bool Combo = true;
         public Side Side { get; set; }
         public Drink Drink { get; set; }
-        public CustomizeCombo(Entree entree)
+        public CretaceousCombo CretaceousCombo { get; set; }
+        public CustomizeCombo(CretaceousCombo CretaceousCombo)
         {
             InitializeComponent();
-            this.Entree = entree;
+            this.CretaceousCombo = CretaceousCombo;
         }
         public CustomizeCombo()
         {
             InitializeComponent();
         }
-
         private void SelectDrink(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new DrinkSelection());
+            NavigationService.Navigate(new DrinkSelection(Combo));
         }
 
         private void SelectSide(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SideSelection());
+            NavigationService.Navigate(new SideSelection(Combo));
+        }
+        private void SelectSize(DinoDiner.Menu.Size size)
+        {
+            if (DataContext is Order order)
+            {
+                if (CretaceousCombo != null)
+                {
+                    CretaceousCombo.Size = size;
+                }
+            }
+        }
+        protected void OnSelectSmall(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Small);
+        }
+        protected void OnSelectLarge(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Large);
+        }
+        protected void OnSelectMedium(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Medium);
         }
     }
 }

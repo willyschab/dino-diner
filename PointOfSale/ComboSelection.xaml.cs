@@ -21,9 +21,8 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : Page
     {
-        private bool combo = true;
         public Entree Entree { get; set; }
-        public CretaceousCombo Combo { get; set; }
+        public CretaceousCombo CretaceousCombo { get; set; }
         public ComboSelection(Entree entree)
         {
             InitializeComponent();
@@ -37,8 +36,8 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                CretaceousCombo cb = new CretaceousCombo(entree);
-                order.Add(cb);
+                CretaceousCombo = new CretaceousCombo(entree);
+                order.Add(CretaceousCombo);
             }
         }
 
@@ -48,7 +47,7 @@ namespace PointOfSale
             {
                 Brontowurst br = new Brontowurst();
                 SelectEntree(br);
-                NavigationService.Navigate(new CustomizeBrontowurst(br, combo));
+                NavigationService.Navigate(new CustomizeBrontowurst(br, CretaceousCombo));
             }
 
         }
@@ -59,7 +58,7 @@ namespace PointOfSale
             {
                 DinoNuggets dn = new DinoNuggets();
                 SelectEntree(dn);
-                NavigationService.Navigate(new CustomizeDinoNuggets(dn, combo));
+                NavigationService.Navigate(new CustomizeDinoNuggets(dn, CretaceousCombo));
             }
 
         }
@@ -70,7 +69,7 @@ namespace PointOfSale
             {
                 SteakosaurusBurger sb = new SteakosaurusBurger();
                 SelectEntree(sb);
-                NavigationService.Navigate(new CustomizeSteakosaurusBurger(sb, combo));
+                NavigationService.Navigate(new CustomizeSteakosaurusBurger(sb, CretaceousCombo));
             }
         }
 
@@ -88,7 +87,7 @@ namespace PointOfSale
             {
                 PrehistoricPBJ pbj = new PrehistoricPBJ();
                 SelectEntree(pbj);
-                NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj, combo));
+                NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj, CretaceousCombo));
             }
         }
 
@@ -98,7 +97,7 @@ namespace PointOfSale
             {
                 VelociWrap vw = new VelociWrap();
                 SelectEntree(vw);
-                NavigationService.Navigate(new CustomizeVelociWrap(vw, combo));
+                NavigationService.Navigate(new CustomizeVelociWrap(vw, CretaceousCombo));
             }
         }
 
@@ -108,7 +107,7 @@ namespace PointOfSale
             {
                 TRexKingBurger kb = new TRexKingBurger();
                 SelectEntree(kb);
-                NavigationService.Navigate(new CustomizeTRexKingBurger(kb, combo));
+                NavigationService.Navigate(new CustomizeTRexKingBurger(kb, CretaceousCombo));
             }
         }
     }

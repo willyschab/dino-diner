@@ -23,16 +23,18 @@ namespace PointOfSale
     {
         private DinoNuggets dn;
         private bool combo = false;
+        public CretaceousCombo CretaceousCombo { get; set; }
         public CustomizeDinoNuggets(DinoNuggets dn)
         {
             InitializeComponent();
             this.dn = dn;
         }
-        public CustomizeDinoNuggets(DinoNuggets dn, bool Combo)
+        public CustomizeDinoNuggets(DinoNuggets dn, CretaceousCombo cretaceousCombo)
         {
             InitializeComponent();
-            combo = Combo;
+            combo = true;
             this.dn = dn;
+            CretaceousCombo = cretaceousCombo;
         }
 
         private void OnAddNugget(object sender, RoutedEventArgs e)
@@ -44,7 +46,7 @@ namespace PointOfSale
         {
             if (combo)
             {
-                NavigationService.Navigate(new CustomizeCombo(dn));
+                NavigationService.Navigate(new CustomizeCombo(CretaceousCombo));
             }
             else
             {

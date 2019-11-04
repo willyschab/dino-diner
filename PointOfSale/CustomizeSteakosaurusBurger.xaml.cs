@@ -23,16 +23,18 @@ namespace PointOfSale
     {
         private SteakosaurusBurger sb = new SteakosaurusBurger();
         private bool combo = false;
+        public CretaceousCombo CretaceousCombo { get; set; }
         public CustomizeSteakosaurusBurger(SteakosaurusBurger sb)
         {
             InitializeComponent();
             this.sb = sb;
         }
-        public CustomizeSteakosaurusBurger(SteakosaurusBurger sb, bool Combo)
+        public CustomizeSteakosaurusBurger(SteakosaurusBurger sb, CretaceousCombo cretaceousCombo)
         {
             InitializeComponent();
-            combo = Combo;
+            combo = true;
             this.sb = sb;
+            CretaceousCombo = cretaceousCombo;
         }
 
         private void OnHoldPickle(object sender, RoutedEventArgs e)
@@ -58,7 +60,7 @@ namespace PointOfSale
         {
             if (combo)
             {
-                NavigationService.Navigate(new CustomizeCombo(sb));
+                NavigationService.Navigate(new CustomizeCombo(CretaceousCombo));
             }
             else
             {

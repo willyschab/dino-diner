@@ -23,16 +23,18 @@ namespace PointOfSale
     {
         private VelociWrap vw;
         private bool combo = false;
+        public CretaceousCombo CretaceousCombo { get; set; }
         public CustomizeVelociWrap(VelociWrap vw)
         {
             InitializeComponent();
             this.vw = vw;
         }
-        public CustomizeVelociWrap(VelociWrap vw, bool Combo)
+        public CustomizeVelociWrap(VelociWrap vw, CretaceousCombo cretaceousCombo)
         {
             InitializeComponent();
-            combo = Combo;
+            combo = true;
             this.vw = vw;
+            CretaceousCombo = cretaceousCombo;
         }
 
         private void OnHoldDressing(object sender, RoutedEventArgs e)
@@ -54,7 +56,7 @@ namespace PointOfSale
         {
             if (combo)
             {
-                NavigationService.Navigate(new CustomizeCombo(vw));
+                NavigationService.Navigate(new CustomizeCombo(CretaceousCombo));
             }
             else
             {

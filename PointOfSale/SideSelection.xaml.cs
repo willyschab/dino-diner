@@ -21,10 +21,15 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for ComboSelection.xaml
     /// </summary>
-    public partial class SideSelection : Page
+    public partial class SideSelection : Page, INotifyPropertyChanged
     {
         private bool combo = false;
         public Side Side { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         public SideSelection()
         {
             InitializeComponent();

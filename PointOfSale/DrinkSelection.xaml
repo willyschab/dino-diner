@@ -105,7 +105,7 @@
                 <TextBlock FontSize="40">Flavor</TextBlock>
             </DockPanel>
         </Button>
-        <Button Click="OnDone" Grid.Row="1" Grid.Column="3">
+        <Button Click="OnDone" Grid.Row="2" Grid.Column="3">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Blank.png"/>
             </Button.Background>

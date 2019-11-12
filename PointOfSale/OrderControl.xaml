@@ -31,7 +31,7 @@
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
                             <TextBlock  Name="Description" Text="{Binding Path=Description}"/>
-                            <Button Click="OnRemoveItem"  Background="Red" Foreground="White" Grid.Column="1">X</Button>
+                            <Button Click="OnRemoveItem" Background="Red" Foreground="White" Grid.Column="1" TabIndex="0">X</Button>
                             <ListBox  Name="Special" ItemsSource="{Binding Path=Special}" Grid.Row="1"/>
                         </Grid>
                     </StackPanel>

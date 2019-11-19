@@ -1,0 +1,73 @@
+﻿@page
+@model Website.Pages.MenuModel
+@using DinoDiner.Menu
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<h1>Menu</h1>
+<h2>Combos</h2>
+<div class="menu-item">
+    @foreach (CretaceousCombo c in Model.Menu.AvailableCombos)
+    {
+        <h3>@c</h3>
+        <h4>Price: @c.Price</h4>
+        <h4>Calories: @c.Calories</h4>
+        <h4>Ingredients:</h4>
+        <div class="ingredients">
+            @foreach (var item in c.Ingredients)
+            {
+                <h5>-@item</h5>
+            }
+        </div>
+    }
+</div>
+<h2>Sides</h2>
+<div class="menu-item">
+    @foreach (Side c in Model.Menu.AvailableSides)
+    {
+        <h3>@c</h3>
+        <h4>Price: @c.Price</h4>
+        <h4>Calories: @c.Calories</h4>
+        <h4>Ingredients:</h4>
+        <div class="ingredients">
+            @foreach (var item in c.Ingredients)
+            {
+                <h5>-@item</h5>
+            }
+        </div>
+    }
+</div>
+<h2>Entrees</h2>
+<div class="menu-item">
+    @foreach (Entree c in Model.Menu.AvailableEntrees)
+    {
+        <h3>@c</h3>
+        <h4>Price: @c.Price</h4>
+        <h4>Calories: @c.Calories</h4>
+        <h4>Ingredients:</h4>
+        <div class="ingredients">
+            @foreach (var item in c.Ingredients)
+            {
+                <h5>-@item</h5>
+            }
+        </div>
+    }
+</div>
+<h2>Drinks</h2>
+<div class="menu-item">
+    @foreach (Drink c in Model.Menu.AvailableDrinks)
+    {
+        <h3>@c</h3>
+        <h4>Price: @c.Price</h4>
+        <h4>Calories: @c.Calories</h4>
+        <h4>Ingredients:</h4>
+        <div class="ingredients">
+            @foreach (var item in c.Ingredients)
+            {
+                <h5>-@item</h5>
+            }
+        </div>
+    }
+</div>
+

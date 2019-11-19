@@ -22,7 +22,7 @@ namespace DinoDiner.Menu
         Orange,
         Lime
     }
-    public abstract class Drink : IOrderItem, INotifyPropertyChanged
+    public abstract class Drink : Menu, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Gets the price.

@@ -88,6 +88,10 @@ namespace DinoDiner.Menu
         {
             return $"{size} Mezzorella Sticks";
         }
+        public string Name()
+        {
+            return $"Fryceritops";
+        }
         /// <summary>
         /// Returns the description of the item.
         /// </summary>

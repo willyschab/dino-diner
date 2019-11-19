@@ -88,6 +88,10 @@ namespace DinoDiner.Menu
         {
             return $"{size} Meteor Mac and Cheese";
         }
+        public string Name()
+        {
+            return $"Meteor Mac & Cheese";
+        }
         /// <summary>
         /// Returns the description of the item.
         /// </summary>

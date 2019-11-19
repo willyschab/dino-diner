@@ -103,5 +103,26 @@
       <Name>Menu</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\blank.png" />
+    <Resource Include="Images\DinoDiner-01.png" />
+    <Resource Include="Images\DinoDiner-02.png" />
+    <Resource Include="Images\DinoDiner-03.png" />
+    <Resource Include="Images\DinoDiner-04.png" />
+    <Resource Include="Images\DinoDiner-05.png" />
+    <Resource Include="Images\DinoDiner-06.png" />
+    <Resource Include="Images\DinoDiner-07.png" />
+    <Resource Include="Images\DinoDiner-08.png" />
+    <Resource Include="Images\DinoDiner-09.png" />
+    <Resource Include="Images\DinoDiner-10.png" />
+    <Resource Include="Images\DinoDiner-11.png" />
+    <Resource Include="Images\DinoDiner-12.png" />
+    <Resource Include="Images\DinoDiner-13.png" />
+    <Resource Include="Images\DinoDiner-14.png" />
+    <Resource Include="Images\DinoDiner-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DinoDiner-29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

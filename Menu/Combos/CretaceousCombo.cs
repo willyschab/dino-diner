@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo : IOrderItem, INotifyPropertyChanged
+    public class CretaceousCombo : Menu, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// The PorpertyChanged event handler; notifies of changes to the Price, Description, and Special properties.
@@ -88,7 +88,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Runs if combo is alled with no arguments.
         /// </summary>
-        private CretaceousCombo() { }
+        public CretaceousCombo() { }
         /// <summary>
         /// Constructor with one argument, entree.
         /// </summary>

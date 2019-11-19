@@ -92,6 +92,10 @@ namespace DinoDiner.Menu
         {
             get { return this.ToString(); }
         }
+        public string Name()
+        {
+            return $"Triceritots";
+        }
         /// <summary>
         /// Gets any special preparation instructions
         /// </summary>

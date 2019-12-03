@@ -157,7 +157,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets a description of this order tiem
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
 

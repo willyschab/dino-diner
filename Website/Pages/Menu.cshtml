@@ -4,70 +4,121 @@
 @{
     ViewData["Title"] = "Menu";
 }
+<div class="body">
+    <div class="MenuItems">
+        <h1>Menu</h1>
+        <h2>Combos</h2>
+        <div class="menu-item">
+            @foreach (CretaceousCombo c in Model.Combos)
+            {
+                <h3>@c</h3>
+                <h4>Price: @c.Price</h4>
+                <h4>Calories: @c.Calories</h4>
+                <h4>Ingredients:</h4>
+                <div class="ingredients">
+                    @foreach (var item in c.Ingredients)
+                    {
+                        <h5>-@item</h5>
+                    }
+                </div>
+            }
+        </div>
+        <h2>Sides</h2>
+        <div class="menu-item">
+            @foreach (Side c in Model.Sides)
+            {
+                <h3>@c</h3>
+                <h4>Price: @c.Price</h4>
+                <h4>Calories: @c.Calories</h4>
+                <h4>Ingredients:</h4>
+                <div class="ingredients">
+                    @foreach (var item in c.Ingredients)
+                    {
+                        <h5>-@item</h5>
+                    }
+                </div>
+            }
+        </div>
+        <h2>Entrees</h2>
+        <div class="menu-item">
+            @foreach (Entree c in Model.Entrees)
+            {
+                <h3>@c</h3>
+                <h4>Price: @c.Price</h4>
+                <h4>Calories: @c.Calories</h4>
+                <h4>Ingredients:</h4>
+                <div class="ingredients">
+                    @foreach (var item in c.Ingredients)
+                    {
+                        <h5>-@item</h5>
+                    }
+                </div>
+            }
+        </div>
+        <h2>Drinks</h2>
+        <div class="menu-item">
+            @foreach (Drink c in Model.Drinks)
+            {
+                <h3>@c</h3>
+                <h4>Price: @c.Price</h4>
+                <h4>Calories: @c.Calories</h4>
+                <h4>Ingredients:</h4>
+                <div class="ingredients">
+                    @foreach (var item in c.Ingredients)
+                    {
+                        <h5>-@item</h5>
+                    }
+                </div>
+            }
+        </div>
+    </div>
 
-<h1>Menu</h1>
-<h2>Combos</h2>
-<div class="menu-item">
-    @foreach (CretaceousCombo c in Model.Menu.AvailableCombos)
-    {
-        <h3>@c</h3>
-        <h4>Price: @c.Price</h4>
-        <h4>Calories: @c.Calories</h4>
-        <h4>Ingredients:</h4>
-        <div class="ingredients">
-            @foreach (var item in c.Ingredients)
-            {
-                <h5>-@item</h5>
-            }
-        </div>
-    }
-</div>
-<h2>Sides</h2>
-<div class="menu-item">
-    @foreach (Side c in Model.Menu.AvailableSides)
-    {
-        <h3>@c</h3>
-        <h4>Price: @c.Price</h4>
-        <h4>Calories: @c.Calories</h4>
-        <h4>Ingredients:</h4>
-        <div class="ingredients">
-            @foreach (var item in c.Ingredients)
-            {
-                <h5>-@item</h5>
-            }
-        </div>
-    }
-</div>
-<h2>Entrees</h2>
-<div class="menu-item">
-    @foreach (Entree c in Model.Menu.AvailableEntrees)
-    {
-        <h3>@c</h3>
-        <h4>Price: @c.Price</h4>
-        <h4>Calories: @c.Calories</h4>
-        <h4>Ingredients:</h4>
-        <div class="ingredients">
-            @foreach (var item in c.Ingredients)
-            {
-                <h5>-@item</h5>
-            }
-        </div>
-    }
-</div>
-<h2>Drinks</h2>
-<div class="menu-item">
-    @foreach (Drink c in Model.Menu.AvailableDrinks)
-    {
-        <h3>@c</h3>
-        <h4>Price: @c.Price</h4>
-        <h4>Calories: @c.Calories</h4>
-        <h4>Ingredients:</h4>
-        <div class="ingredients">
-            @foreach (var item in c.Ingredients)
-            {
-                <h5>-@item</h5>
-            }
-        </div>
-    }
+    <div class="searchBody">
+        <form method="post">
+            <input type="text" name="search" id="search" value="@Model.search" />
+            <input type="submit" value="Search & Filter" />
+
+            <h4>Menu Category</h4>
+            <div class="checkbox-list">
+                <label>
+                    <input class="menu-category" type="checkbox" name="menuCategorie" value="Combo" checked="@Model.menuCategorie.Contains("Combo")" />
+                    Combo
+                </label>
+                <label>
+                    <input class="menu-category" type="checkbox" name="menuCategorie" value="Entree" checked="@Model.menuCategorie.Contains("Entree")" />
+                    Entree
+                </label>
+                <label>
+                    <input class="menu-category" type="checkbox" name="menuCategorie" value="Side" checked="@Model.menuCategorie.Contains("Side")" />
+                    Side
+                </label>
+                <label>
+                    <input class="menu-category" type="checkbox" name="menuCategorie" value="Drink" checked="@Model.menuCategorie.Contains("Drink")" />
+                    Drink
+                </label>
+
+                <h4>Price</h4>
+                <label>
+                    Min:
+                    <input type="number" min="0" max="10" step="0.01" name="minimumPrice" id="minimum-price" value="@Model.minimumPrice" />
+                </label>
+                <label>
+                    Max:
+                    <input type="number" min="0" max="10" step="0.01" name="maximumPrice" id="minimum-price" value="@Model.maximumPrice" />
+                </label>
+
+                <h4>Ingredients to Exclude:</h4>
+                @foreach (string c in Model.Menu.PossibleIngredients)
+                {
+                    <div>
+                        <label>
+                            <input class="possible-ingredients" type="checkbox" name="ingredients" value="@c" checked="@Model.ingredients.Contains(c)" />
+                            @c
+                        </label>
+                    </div>
+                }
+            </div>
+        </form>
+    </div>
 </div>
 

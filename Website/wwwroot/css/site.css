@@ -22,10 +22,28 @@ body {
 
 .menu-item{
     padding: 20px;
-    border: 5px solid black;
 }
 
 .ingredients{
     border:1px solid gray;
 }
 
+.MenuItems {
+    width: 75%;
+    border: 5px solid black;
+}
+.searchBody {
+    padding-top: 20px;
+    text-align: left;
+    padding-left: 10px;
+    width: 25%;
+    border: 2px solid black;
+}
+
+.body{
+    display: flex;
+}
+
+.possible-ingredients{
+    text-align: left;
+}

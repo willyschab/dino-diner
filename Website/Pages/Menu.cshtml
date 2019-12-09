@@ -7,14 +7,34 @@
 <div class="body">
     <div class="MenuItems">
         <h1>Menu</h1>
-        <h2>Combos</h2>
+        <h2>Combos:</h2>
         <div class="menu-item">
             @foreach (CretaceousCombo c in Model.Combos)
             {
-                <h3>@c</h3>
-                <h4>Price: @c.Price</h4>
-                <h4>Calories: @c.Calories</h4>
-                <h4>Ingredients:</h4>
+            <h3>@c</h3>
+            <table>
+                <tr>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Calories</th>
+                </tr>
+                <tr>
+                    <td>Small</td>
+                    <td>@String.Format("{0:0.00}", Model.comboSizePrice("small", c))</td>
+                    <td>@c.Calories</td>
+                </tr>
+                <tr>
+                    <td>Medium</td>
+                    <td>@String.Format("{0:0.00}", Model.comboSizePrice("medium", c))</td>
+                    <td>@c.Calories</td>
+                </tr>
+                <tr>
+                    <td>Large</td>
+                    <td>@String.Format("{0:0.00}", Model.comboSizePrice("large", c))</td>
+                    <td>@c.Calories</td>
+                </tr>
+            </table>
+            <h3>Ingredients:</h3>
                 <div class="ingredients">
                     @foreach (var item in c.Ingredients)
                     {
@@ -28,9 +48,29 @@
             @foreach (Side c in Model.Sides)
             {
                 <h3>@c</h3>
-                <h4>Price: @c.Price</h4>
-                <h4>Calories: @c.Calories</h4>
-                <h4>Ingredients:</h4>
+                <table>
+                    <tr>
+                        <th>Size</th>
+                        <th>Price</th>
+                        <th>Calories</th>
+                    </tr>
+                    <tr>
+                        <td>Small</td>
+                        <td>@String.Format("{0:0.00}", Model.sideSizePrice("small", c))</td>
+                        <td>@c.Calories</td>
+                    </tr>
+                    <tr>
+                        <td>Medium</td>
+                        <td>@String.Format("{0:0.00}", Model.sideSizePrice("medium", c))</td>
+                        <td>@c.Calories</td>
+                    </tr>
+                    <tr>
+                        <td>Large</td>
+                        <td>@String.Format("{0:0.00}", Model.sideSizePrice("large", c))</td>
+                        <td>@c.Calories</td>
+                    </tr>
+                </table>
+                <h3>Ingredients:</h3>
                 <div class="ingredients">
                     @foreach (var item in c.Ingredients)
                     {
@@ -46,7 +86,7 @@
                 <h3>@c</h3>
                 <h4>Price: @c.Price</h4>
                 <h4>Calories: @c.Calories</h4>
-                <h4>Ingredients:</h4>
+                <h3>Ingredients:</h3>
                 <div class="ingredients">
                     @foreach (var item in c.Ingredients)
                     {
@@ -60,9 +100,29 @@
             @foreach (Drink c in Model.Drinks)
             {
                 <h3>@c</h3>
-                <h4>Price: @c.Price</h4>
-                <h4>Calories: @c.Calories</h4>
-                <h4>Ingredients:</h4>
+                <table>
+                    <tr>
+                        <th>Size</th>
+                        <th>Price</th>
+                        <th>Calories</th>
+                    </tr>
+                    <tr>
+                        <td>Small</td>
+                        <td>@String.Format("{0:0.00}", Model.drinkSizePrice("small", c))</td>
+                        <td>@c.Calories</td>
+                    </tr>
+                    <tr>
+                        <td>Medium</td>
+                        <td>@String.Format("{0:0.00}", Model.drinkSizePrice("medium", c))</td>
+                        <td>@c.Calories</td>
+                    </tr>
+                    <tr>
+                        <td>Large</td>
+                        <td>@String.Format("{0:0.00}", Model.drinkSizePrice("large", c))</td>
+                        <td>@c.Calories</td>
+                    </tr>
+                </table>
+                <h3>Ingredients:</h3>
                 <div class="ingredients">
                     @foreach (var item in c.Ingredients)
                     {

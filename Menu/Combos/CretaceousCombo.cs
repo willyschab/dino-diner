@@ -35,7 +35,7 @@ namespace DinoDiner.Menu
         /// Gets the side.
         /// </summary>
         public Side Side { get; set; }
-        private Size size = Size.Small;
+        private Size size;
         /// <summary>
         /// Sets the size.
         /// </summary>
@@ -105,7 +105,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{size} {Entree} Combo";
+            return $"{Entree} Combo";
         }
         public string Description
         {

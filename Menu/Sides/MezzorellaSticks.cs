@@ -86,11 +86,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{size} Mezzorella Sticks";
-        }
-        public string Name()
-        {
-            return $"Fryceritops";
+            return $"Mezzorella Sticks";
         }
         /// <summary>
         /// Returns the description of the item.

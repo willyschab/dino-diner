@@ -151,7 +151,7 @@ namespace DinoDiner.Menu
             }
             else
             {
-                return $"{size} Tyrannotea";
+                return $"Tyrannotea";
             }
         }
         /// <summary>

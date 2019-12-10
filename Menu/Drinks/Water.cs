@@ -101,7 +101,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{size} Water";
+            return $"Water";
         }
         /// <summary>
         /// Returns the description of the item.

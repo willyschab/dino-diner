@@ -83,7 +83,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{size} Triceritots";
+            return $"Triceritots";
         }
         /// <summary>
         /// Returns the description of the item.
@@ -91,10 +91,6 @@ namespace DinoDiner.Menu
         public override string Description
         {
             get { return this.ToString(); }
-        }
-        public string Name()
-        {
-            return $"Triceritots";
         }
         /// <summary>
         /// Gets any special preparation instructions

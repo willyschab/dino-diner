@@ -67,27 +67,10 @@ namespace DinoDiner.Menu
                 MezzorellaSticks ms = new MezzorellaSticks();
                 Triceritots tt = new Triceritots();
 
-                Fryceritops ft2 = new Fryceritops();
-                MeteorMacAndCheese mmc2 = new MeteorMacAndCheese();
-                MezzorellaSticks ms2 = new MezzorellaSticks();
-                Triceritots tt2 = new Triceritots();
-                ft2.Size = Size.Medium;
-                mmc2.Size = Size.Medium;
-                ms2.Size = Size.Medium;
-                tt2.Size = Size.Medium;
-
-                Fryceritops ft3 = new Fryceritops();
-                MeteorMacAndCheese mmc3 = new MeteorMacAndCheese();
-                MezzorellaSticks ms3 = new MezzorellaSticks();
-                Triceritots tt3 = new Triceritots();
-                ft3.Size = Size.Large;
-                mmc3.Size = Size.Large;
-                ms3.Size = Size.Large;
-                tt3.Size = Size.Large;
 
                 List<Side> sides = new List<Side>()
                 {
-                    ft, ft2, ft3, mmc, mmc2, mmc3, ms, ms2, ms3, tt, tt2, tt3
+                    ft, ms, tt
                 };
                 return sides;
 
@@ -106,27 +89,9 @@ namespace DinoDiner.Menu
                     Sodasaurus sd = new Sodasaurus();
                     Tyrannotea tt = new Tyrannotea();
                     Water w = new Water();
-
-                    JurassicJava jv2 = new JurassicJava();
-                    Sodasaurus sd2 = new Sodasaurus();
-                    Tyrannotea tt2 = new Tyrannotea();
-                    Water w2 = new Water();
-                    jv2.Size = Size.Medium;
-                    sd2.Size = Size.Medium;
-                    tt2.Size = Size.Medium;
-                    w2.Size = Size.Medium;
-
-                    JurassicJava jv3 = new JurassicJava();
-                    Sodasaurus sd3 = new Sodasaurus();
-                    Tyrannotea tt3 = new Tyrannotea();
-                    Water w3 = new Water();
-                    jv3.Size = Size.Large;
-                    sd3.Size = Size.Large;
-                    tt3.Size = Size.Large;
-                    w3.Size = Size.Large;
                     List<Drink> drinks = new List<Drink>()
                     {
-                        jv, jv2, jv3, sd, sd2, sd3, tt, tt2, tt3, w, w2, w3
+                        jv, sd, tt, w
                     };
                     return drinks;
                 };

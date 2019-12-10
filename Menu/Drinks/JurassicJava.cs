@@ -132,7 +132,7 @@ namespace DinoDiner.Menu
             }
             else
             {
-                return $"{size} Jurassic Java";
+                return $"Jurassic Java";
 
             }
         }

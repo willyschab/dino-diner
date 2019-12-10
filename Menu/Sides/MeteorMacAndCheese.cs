@@ -86,11 +86,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{size} Meteor Mac and Cheese";
-        }
-        public string Name()
-        {
-            return $"Meteor Mac & Cheese";
+            return $"Meteor Mac and Cheese";
         }
         /// <summary>
         /// Returns the description of the item.

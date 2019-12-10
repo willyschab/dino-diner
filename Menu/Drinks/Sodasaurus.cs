@@ -61,7 +61,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public override string Description
         {
-            get { return this.ToString();  }
+            get { return $"{SodasaurusFlavor} Sodasaurus"; }
 
         }
         /// <summary>
